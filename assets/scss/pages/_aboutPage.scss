@@ -1,0 +1,85 @@
+.about-page {
+    &__background {
+        width: 100%;        
+        background-image: url("../images/underwater.jpg");
+        background-size: cover;    
+        position: relative;  
+        height: fit-content;
+        padding-top: 30px;
+        padding-bottom: 30px;
+
+        @include respond-to(xs) {
+            padding-top: 50px;
+            padding-bottom: 50px; 
+        }
+        @include respond-to(sm) {
+            padding-top: 60px;
+            padding-bottom: 60px; 
+        }
+        @include respond-to(md) {
+            padding-top: 70px;
+            padding-bottom: 70px; 
+        }
+        @include respond-to(lg) {
+            padding-top: 110px;
+            padding-bottom: 110px; 
+        }
+        
+    }
+    &__container {
+        background-color: $blue;  
+        position: relative;
+        width: min(90%, 1000px);
+        height: fit-content;   
+        margin: auto;
+        padding: 50px 30px;
+        border-radius: 5px; 
+        box-shadow: $grey-shadow-big;
+
+        
+
+        @include respond-to(md) {
+            padding: 50px;    
+        }
+        @include respond-to(lg)  {
+            padding: 70px;
+        }
+        & h1 {
+            font-family: "Mulish-700";
+            font-size: clamp(1.75rem, 2.5vw, 5rem); 
+            text-align: center;
+            color: $white;
+            text-shadow: rgba(0, 0, 0, 0.3) 0px 5px 10px; 
+            letter-spacing: 0.5px;
+            padding-bottom: 30px;
+        }
+        & p {
+            font-family: "Mulish-500";
+            font-size: clamp(1.25rem, 1.5vw, 1.75rem);             
+            color: $white;    
+            text-shadow: rgba(0, 0, 0, 0.2) 0px 5px 5px;
+            letter-spacing: 1px;      
+            padding-bottom: 20px;
+            text-align: center;
+            @include respond-to(md) {
+                text-align: start;  
+                text-indent: 50px; 
+            }
+        }
+        & ul {
+            padding-left: 0;
+            @include respond-to(xs) {
+                padding-left: 40px;
+            }
+            > li {
+                font-family: "Mulish-500";
+                font-size: clamp(1.25rem, 1.5vw, 1.75rem); 
+                
+                color: $white;    
+                text-shadow: rgba(0, 0, 0, 0.2) 0px 5px 5px;
+                letter-spacing: 1px;      
+                
+            }
+        }
+    }
+}

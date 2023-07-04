@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Федерация плавания Байкал | Главная</title>
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <script type='module' defer src="./assets/js/common.js"></script>
+</head>
+<body>
+    <div class="theme-switcher__container">
+        <label>
+            <input type="checkbox" id="theme-switcher">
+        </label>
+    </div>
+    <div id="root">
+        <div class="overlay hidden"></div>
+        <header>
+            <div class="header__container container">
+                <a href="index.html">
+                    <img src="./assets/images/logo.png" class='header__logo' alt="Logo">
+                </a>
+                <nav>
+                    <div class="mobile">
+                        <button aria-label="mobile menu" class="">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                        <ul class="nav__menu_mobile">
+                            <li>
+                                <a href="/">
+                                    <span class="text-underlined">Главная</span>
+                                </a>
+                            </li>                                                   
+                            <li>
+                                <a href="/about.html" class="transition">
+                                    <span class="text-underlined">О нас</span>
+                                </a>
+                            </li> 
+                            <li class="expandable">
+                                <div class="row">
+                                    <span class="text-underlined">Новости</span>
+                                </div>
+                                
+                                <div class="dropdown-content" >                                    
+                                    <a class="transition" href="/news.html#" >
+                                        <span class="text-underlined">Последние Новости</span>
+                                    </a>
+                                    <a class="transition" href="/news.html" >
+                                        <span class="text-underlined">Архив новостей</span>
+                                    </a>                                                              
+                                </div>
+                            </li> 
+                            <li>
+                                <a href="/price.html" class="transition">
+                                    <span class="text-underlined">Стоимость</span>
+                                </a>
+                            </li> 
+                            <li>
+                                <a href="/downloads.html" class="transition">
+                                    <span class="text-underlined">Документы</span>
+                                </a>
+                            </li>                              
+                            <li>
+                                <a href="/contacts.html" class="transition">
+                                    <span class="text-underlined">Контакты</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    
+
+                    <div class="desktop">
+                        <ul class="nav__menu row">
+                            <li>
+                                <a href="/">
+                                    <span class="text-underlined">Главная</span>
+                                </a>
+                            </li> 
+                            <li><div class="nav__line"></div></li>                                                  
+                            <li>
+                                <a href="/about.html" class="transition">
+                                    <span class="text-underlined">О нас</span>
+                                </a>
+                            </li> 
+                            <li><div class="nav__line"></div></li> 
+                            <li class="expandable">
+                                <span class="text-underlined">Новости</span>                                
+                                <div class="dropdown-content" >
+                                    <div class="container">
+                                        <a class="transition" href="/news.html#" >
+                                            <span class="text-underlined">Последние Новости</span>
+                                        </a>
+                                        <a class="transition" href="/news.html" >
+                                            <span class="text-underlined">Архив новостей</span>
+                                        </a>                                                                                                    
+                                    </div>                                    
+                                </div>
+                            </li>   
+                            <li><div class="nav__line"></div></li> 
+                            <li>
+                                <a href="/price.html" class="transition">
+                                    <span class="text-underlined">Стоимость</span>
+                                </a>
+                            </li> 
+                            <li><div class="nav__line"></div></li> 
+                            <li>
+                                <a href="/downloads.html" class="transition">
+                                    <span class="text-underlined">Документы</span>     
+                                </a>                                
+                            </li>   
+                            <li><div class="nav__line"></div></li>                            
+                            <li>
+                                <a href="/contacts.html" class="transition">
+                                    <span class="text-underlined">Контакты</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                </nav>    
+            </div>
+        </header>
+    
+        <section class="content">
+            <div class="news-page__background">
+                <h1>Новости</h1>
+                <h3>Следите за нашими новостями, <br>акциями и соревнованиями</h3>
+                <div class="news-page__cards__container container">
+                    
+                    <div class="news-page__cards__container__item">
+                        <a href="/newsDetailed.html" class="transition">                            
+                            <div>
+                                <img src="./assets/images/sportsmen.jpg" alt="">
+                                <h6>Cоревнования памяти Марии Цукановой</h6>
+                                <p class="news-page__cards__container__item__date">02.05.2023</p>
+                                <p>Традиционные соревнования по плаванию, посвящённых памяти Героя Советского союза Марии Цукановой, состоятся 4-5 мая в плавательном бассейне «Кристалл»</p>
+                            </div>  
+                            <span class="text-underlined">Подробнее...</span>
+                        </a>                        
+                    </div>
+                    <div class="news-page__cards__container__item">
+                        <a href="/newsDetailed.html" class="transition">                            
+                            <div>
+                                <img src="./assets/images/ontheback.jpg" alt="">
+                                <h6>ЛУЧШИЕ МОМЕНТЫ Соревнований "Первые старты" 22.04.23г.</h6>
+                                <p class="news-page__cards__container__item__date">28.04.2023</p>
+                                <p>Вспомнить как это было и сохраните для себя лучшие моменты соревнований!
+                                    Переходите по ссылке и ищите себя на фото </p>
+                                    
+                            </div>  
+                            <span class="text-underlined">Подробнее...</span>
+                        </a>  
+                    </div>
+                    <div class="news-page__cards__container__item">
+                        <a href="/newsDetailed.html" class="transition">   
+                            <div>
+                                <img src="./assets/images/news_compet.jpg" alt="">
+                                <h6>Уже завтра 22 апреля соревнования!</h6>
+                                <p class="news-page__cards__container__item__date">21.04.2023</p>
+                                <p></p>
+                            </div>  
+                            <span class="text-underlined">Подробнее...</span>
+                        </a>  
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <footer>
+            <div class="footer__menu container">
+                <div class="footer__menu_left-block">
+                    <h6 >Федерация плавания Иркутской области «Байкал»</h6>
+                    <p >Мы воспитываем в детях стремление к победе, дисциплину, выносливость и спортивный дух. </p>
+                </div>
+                <div class="footer__line"></div>
+                <div class="footer__menu_right-block">   
+                    <a href="https://go.2gis.com/akm0i" target="_blank">                 
+                        <div class="row footer__contacts__block">
+                            <img src="./assets/images/icons/location1_icon.svg" alt="" class="footer__icon">                            
+                            <div class="footer__contacts__block__text text-underlined">664050, Иркутская область, г.Иркутск, ул.Байкальская, 253/1</div>
+                        </div>
+                    </a>
+                    <a href="tel:+7111111111111">
+                        <div class="row footer__contacts__block">
+                            <img src="./assets/images/icons/phone_icon.svg" class="footer__icon" alt="phone">
+                            <div class="footer__contacts__block__text text-underlined">+7 111111111111</div>
+                        </div> 
+                    </a>               
+                    <a href="mailto:email_address@gmail.com">
+                        <div class=" row footer__contacts__block">
+                            <img src="./assets/images/icons/envelope_mail_icon.svg" class="footer__icon" alt="email">                            
+                            <div class="footer__contacts__block__text text-underlined">email_address@gmail.com</div>
+                        </div>
+                    </a>
+                </div>  
+            </div>
+            
+            <div class="footer__rights">
+                <div class="footer__rights__container row container">
+                    Федерация плавания Иркутской области<br>Copyright © 2023 Все права защищены
+                    <div class="row">
+                        <a href="https://instagram.com/swimming.irkutsk?igshid=NTc4MTIwNjQ2YQ==" target="_blank">
+                            <img src="./assets/images/icons/instagram_icon.svg" class="footer__rights__icon " alt="">                            
+                        </a>  
+                        <a href="https://t.me/fpiobaikal" target="_blank"> 
+                            <img src="./assets/images/icons/telegram_icon.svg" class="footer__rights__icon"  alt="telegram">                            
+                        </a> 
+                        <a href="https://vk.com" target="_blank"> 
+                            <img src="./assets/images/icons/vk_icon.svg" class="footer__rights__icon" alt="vk">                            
+                        </a> 
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

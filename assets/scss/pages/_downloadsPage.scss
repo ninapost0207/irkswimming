@@ -1,0 +1,208 @@
+.downloads-page {
+    &__background-photo {
+        width: 100%;
+        background-image: url('../images/water.jpg');
+        background-size: cover;    
+        position: relative; 
+        height: fit-content;
+        padding: 30px 10px;
+        
+
+        @include respond-to(xs) {
+            padding-top: 50px;
+            padding-bottom: 50px; 
+        }
+        @include respond-to(sm) {
+            padding-top: 60px;
+            padding-bottom: 60px; 
+        }
+        @include respond-to(md) {
+            padding-top: 100px;
+            padding-bottom: 100px; 
+        } 
+    }
+    
+    &__cards {
+        background: linear-gradient(to bottom, $light-blue, $white);  
+        position: relative;        
+        height: fit-content;       
+        margin: auto;
+        padding: 30px;
+        border-radius: 5px; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 0;        
+        align-items: center;
+        box-shadow: $grey-shadow-big;
+        width: 90%;
+        
+        @include respond-to(xs) {
+            width: 70%; 
+        }
+        @include respond-to(sm) {
+            width: 60%; 
+        }
+        @include respond-to(md) {
+            top: 0;                   
+            flex-direction: row; 
+            width: 90%;
+        }
+        @include respond-to(lg) {
+            width: 1000px; 
+        }
+
+        &__item {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            padding-top: 30px;
+            
+            @include respond-to(sm) {
+                justify-content: center;
+                width: 50%;
+            }
+            @include respond-to(md) {
+                justify-content: center;
+                width: 50%;
+            }
+            & > a {   
+                text-decoration: none;  
+                text-align: center;  
+
+                @include respond-to(md) {
+                    margin-top: 0px;                    
+                    width: fit-content; 
+                }  
+    
+                
+                & > span {
+                    color: $dark-blue;  
+                    width: fit-content;
+                    letter-spacing: 1px;
+                    text-transform: uppercase;
+                    font-family: "Mulish-800";
+                    font-size: clamp(1.4rem, 1.75vw, 1.75rem);  
+                    text-align: start; 
+                    text-shadow: $blue-shadow;
+                    padding-bottom: 5px;                    
+                }
+
+                & img {
+                    display: block;
+                    width: 200px;            
+                    height: 150px;
+                    object-fit: cover;
+                    box-shadow: $blue-shadow;
+                    border-radius: 5px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-top: 10px;
+                    margin-bottom: 20px;
+                    @include respond-to(xs) {
+                        width: 250px;
+                    }
+                    @include respond-to(sm) {
+                        height: 200px;
+                        width: 400px;
+                    }
+        
+                    @include respond-to(md) {
+                        height: 300px;
+                        width: 250px;
+                        margin-top: 40px;                        
+                    }
+                
+                }
+            }
+        }
+    }
+    
+    &__docs__container {
+        background: linear-gradient(to bottom, $light-blue, $white); 
+        padding: 50px 20px;
+        border-top: 5px solid $blue;  
+        position: relative;
+        @include respond-to(xs) {
+            padding: 60px 30px;                      
+        }
+        @include respond-to(sm) {
+            padding: 70px 40px;                      
+        }
+
+        &__item {    
+            margin-left: auto;
+            margin-right: auto;                   
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+            align-items: start;
+            @include respond-to(md) {
+                gap: 50px;                       
+            }
+            
+            & h3 {
+                font-family: 'Play-400';
+                font-size: 30px;                
+                padding: 0px;
+                color: $dark-dark-blue;
+                text-shadow: $blue-shadow;
+                margin-top: 20px;
+
+                @include respond-to(xs) {
+                    font-size: 35px;        
+                }
+                @include respond-to(md) {
+                    font-size: 40px;   
+                    letter-spacing: 1px; 
+                    margin-top: 50px;                        
+                }
+            }
+            & ul {
+                padding-left: 0;
+                margin: 0;
+                margin-bottom: 50px;
+                & li {                    
+                    width: 100%;
+                    margin: 0;
+                    & a {
+                        text-decoration: none;
+                        color: $dark-dark-blue;
+                        font-family: 'Play-400';
+                        font-size: 18px;
+                        padding-top: 20px;
+                        padding-bottom: 5px;
+
+                        @include respond-to(xs) {
+                            font-size: 20px;        
+                        }
+                        @include respond-to(md) {
+                            font-size: 22px;                         
+                        }
+                        
+                        &::before{
+                            left: 0;
+                            transform: translateX(0); 
+                        }
+                        &:hover {
+                            text-shadow: $blue-shadow;
+                        }
+                    }
+                }
+
+            }
+            &__line {
+                height: 2px;
+                width: 70px;
+                background: $blue;
+                margin: 20px 0px;
+                border-radius: 1px;
+            }
+            
+        }
+    }
+}

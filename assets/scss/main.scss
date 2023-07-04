@@ -1,0 +1,432 @@
+@import './main/variables';
+@import './main/mixins';
+@import './main/fonts';
+
+@import "./components/themeSwitcher";
+@import "./components/modal";
+@import './layouts/footer';
+@import './layouts/header';
+@import './components/nav';
+@import './pages/mainPage';
+@import './pages/downloadsPage';
+@import './pages/_newsPage.scss';
+@import './pages/newsDetailedPage';
+@import './pages/_aboutPage.scss';
+@import './pages/_pricePage.scss';
+@import './pages/_contactsPage.scss';
+
+html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer, section, nav, img, a, div {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body {
+    opacity: 1;
+}
+.container {
+    width: min(97%, 1000px);
+}
+button {
+    border: none;
+    padding: 20px 30px;
+    border-radius: 5px;
+}
+button:hover {
+    cursor: pointer;
+    
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(51, 173, 255, 0.8);
+    pointer-events: none;
+    backdrop-filter: blur(3px);
+    z-index: 1;
+    opacity: 0.8;    
+    transition: opacity 0.2s 0s ease-in-out;
+    &.hidden {
+        opacity: 0;
+    }
+}
+.hidden {
+    //display: none;  
+    opacity: 0;       
+    transition: opacity 0.2s 0s ease-in-out,
+                transform 0.5s 0s ease-in-out;
+}
+input {
+    border: none;
+}
+
+a {
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+.align-center {
+    align-items: center;
+}
+.content {
+    position: relative;    
+}
+
+.text-underlined {
+    position: relative;
+    transition: color .25s ease-out;
+    width: fit-content;
+}
+
+.text-underlined::before {
+    content: "";
+    width: 0;
+    height: 3px;
+    background-color: $blue;
+    transition: width .1s ease-out;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+
+.text-underlined:hover::before {
+    width: 100%;
+    transition-duration: .3s;
+}
+#root.dark {
+    header {
+        background: $dark-blue;
+        border-bottom: 5px solid $dark-dark-blue;
+        & nav {
+            background-color: $dark-blue;
+            & .mobile {
+                &>button>span{
+                    background-color: $light-blue;
+                }
+            
+                & ul {
+                    background-color: $dark-blue;                
+                    & > li {
+                        & > a > span{
+                            color: $white;
+                        }
+                        &.expandable {
+                            &>.row {
+                                & > span {
+                                    color: $white;                                
+                                }
+                            
+                                &::after {                                
+                                    border-color: $white;                                
+                                }    
+                            }
+                            & .dropdown-content {                            
+                                background-color: $dark-blue;                            
+                                border: 2px solid $light-blue;                            
+                            
+                                @include respond-to(sm) {                                
+                                    background-color: $dark-blue;
+                                    border: none;                                
+                                    border-left: 2px solid $light-blue;
+                                }    
+                                & span {
+                                    color: $white;
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+            & .desktop {
+                
+                &>ul >li {                
+                        
+                    & a > span {
+                            color: $white;                                
+                            text-shadow: rgba(0, 0, 0, 0.1) 0px 2px 2px;                                
+                    }
+                    
+                    &.expandable {         
+                        & span {
+                            color: $white;                            
+                            text-shadow: rgba(0, 0, 0, 0.1) 0px 2px 2px;
+                        }    
+    
+                        & .dropdown-content {           
+                            background-color: $dark-dark-blue;  
+                            border: none; 
+                            border-radius: 0px;                             
+        
+                            & span {
+                                color: $white;
+                            }                                
+                        }  
+                    }
+                    & .nav__line {
+                        background-color: $dark-dark-blue;                           
+                    }        
+                }
+            }
+        }   
+    }
+    .main-page {
+        &__description {
+            background-color: $dark-dark-blue; 
+            & h1 {
+                color: $light-light-blue;
+            }
+            & p {
+                color: $light-light-blue;  
+            }
+            & button {
+                background: linear-gradient(to bottom, $dark-dark-blue, $dark-blue);
+                border: 2px solid $blue;   
+                
+                & a {
+                    color: $light-light-blue;
+                }
+            }
+        }
+    }
+    .about-page {        
+        &__container {
+            background-color: $dark-dark-blue;
+            
+            & h1 {                
+                color: $light-light-blue;                
+            }
+            & p {                             
+                color: $light-light-blue;
+            }
+            & ul {
+                li {                    
+                    color: $light-light-blue;  
+                }
+            }
+        }
+    }
+    .news-page {
+        &__background {
+            background: linear-gradient(to bottom, $blue, $dark-blue, $dark-dark-blue);  
+            & h1 {                
+                text-shadow: $blue-shadow;                
+                color: $dark-dark-blue;
+            }
+            & h3 {                
+                color: $dark-dark-blue;
+                text-shadow: $blue-shadow;                 
+            }
+        }
+        
+        &__cards__container {
+            &__item {
+                background: $dark-dark-blue;
+                box-shadow: $blue-shadow;
+                color: $light-light-blue;
+                & h6, a {
+                    color: $white;
+                }   
+                
+            }
+        }
+        
+    }
+    .newsDetailed-page {        
+        &__container {
+            background-color: $dark-blue;  
+            box-shadow: $blue-shadow;
+    
+            & h1 {                
+                color: $light-light-blue;                
+            }
+            & h3 {                
+                color: $light-light-blue;                 
+            }            
+            & p {                
+                color: $white;                
+            }
+            & a {                
+                color: $white;              
+            }   
+        }   
+    }
+    .price-page {
+        &__background {
+            background: url("../images/competition.jpg");
+        }
+        
+        &__container {            
+            &__item {
+                background: $dark-dark-blue;
+                box-shadow: $blue-shadow;
+    
+                & h3, h2 {
+                    color:$white;    
+                }
+                & p {
+                    color: $light-light-blue;  
+                }
+                
+                & ul {                    
+                    & li {
+                        color: $light-light-blue;  
+                    }
+                }
+                & button {
+                    background: linear-gradient(to bottom, $dark-blue, $dark-dark-blue);  
+                    color: $light-light-blue;                    
+                    border: 0.5px solid $blue;
+    
+                    &:hover {
+                        border: 0.5px solid $dark-blue;
+                    }  
+                    & a {
+                        color: $light-light-blue;
+                    }
+                }
+            }
+        }
+        
+    }
+    .downloads-page {
+        &__background-photo {
+            background-image: url('../images/water.jpg');
+        }
+        
+        &__cards {
+            background: linear-gradient(to bottom, $dark-blue, $dark-dark-blue);  
+            box-shadow: $grey-shadow-big;
+
+            &__item {
+                & > a > span {
+                    color: $light-light-blue;
+                }
+            }
+        }
+        &__docs__container {
+            background: linear-gradient(to bottom, $dark-blue, $dark-dark-blue); 
+            border-top: 5px solid $dark-dark-blue;  
+
+            &__item {
+                & h3 {                
+                    color: $white;
+                    text-shadow: none;
+                }
+                & ul > li > a {
+                    color: $light-light-blue;
+                }
+                &__line {                    
+                    background: $white;                    
+                }
+            }
+    
+            
+        }
+        &__table {
+            border: 2px solid $light-blue;
+            color: $light-light-blue;            
+            box-shadow: $blue-shadow;    
+            
+            & td {
+                border: 2px solid $light-blue;
+            }
+            & a {                
+                color: $light-light-blue; 
+            }
+        }
+    }
+    .contacts-page {
+        &__background {
+            background-image: url('../images/competition.jpg');
+        }
+        &__container {
+            background-color: $dark-dark-blue;  
+            box-shadow: $blue-shadow;    
+            color: $light-light-blue; 
+            
+            & form {                
+                & h2 {                    
+                    color: $light-light-blue;
+                    text-shadow: $blue-shadow;
+                }
+                
+                & input, textarea {                    
+                    border: 0.5px solid $light-light-blue; 
+                    color: $light-light-blue;                    
+                    &:hover {
+                        border: 0.5px solid $blue;
+                    }
+                }
+                
+                & button {                    
+                    color: $white;
+                    box-shadow: $blue-shadow;                    
+                    border: 0.5px solid $dark-blue;
+                    background: linear-gradient(to bottom, $dark-blue, $dark-dark-blue);
+                    &:hover {
+                        border: 0.5px solid $dark-dark-blue;
+                    }
+                }                
+            }        
+        }
+        &__contacts {            
+            color: $light-light-blue;
+            
+            &__item {                
+                border: 0.2px solid $light-blue;
+                & a {
+                    color: $light-light-blue;                        
+                }
+                &_right {                    
+                    & h6 {                        
+                        color: $light-light-blue;                         
+                    }                    
+                }            
+            }     
+        }
+        & .modal {
+            background-color: $dark-dark-blue;
+            border: 1px solid $dark-dark-blue;
+        
+            & h3 {                
+                color: $light-light-blue;
+                text-shadow: $blue;          
+            }
+            & p {
+                color: $light-light-blue;
+            }    
+        }
+    }
+    
+    footer {
+        background-color: $dark-blue; 
+        & .footer__menu {
+            color: $white;
+            text-shadow: none;  
+            & a {
+                color: $white;
+            }
+        }
+        & .footer__icon {
+            background: linear-gradient(to bottom, $light-blue, $blue, $dark-blue);
+        }
+        & .footer__rights {
+            color: $light-blue;
+            background-color: $dark-dark-blue;
+        }
+    }
+}

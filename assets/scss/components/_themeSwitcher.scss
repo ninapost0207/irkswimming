@@ -1,0 +1,37 @@
+.theme-switcher__container {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    z-index: 5000;
+
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    box-shadow: $blue-shadow;    
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon.svg');
+    background-color: $blue;
+
+    &.dark {
+        background-image: url('https://www.uplooder.net/img/image/55/7aa9993fc291bc170abea048589896cf/sun.svg');
+        background-color: $light-blue;
+    }
+
+    @include respond-to(lg) {
+        top: 20px;
+    }
+
+    & label {
+        & input {
+            width: 60px;
+            height: 60px;
+            opacity: 0;
+            
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}

@@ -1,0 +1,166 @@
+.price-page {
+    &__background {
+        background: url("../images/underwate2.jpg");
+        background-size: contain;
+        background-repeat: repeat-y;
+        width: 100%;  
+        background-size: cover;    
+        position: relative;   
+        height: fit-content;
+        padding: 30px 10px;
+        
+
+        @include respond-to(xs) {
+            padding-top: 50px;
+            padding-bottom: 50px; 
+        }
+        @include respond-to(sm) {
+            padding-top: 60px;
+            padding-bottom: 60px; 
+        }
+        @include respond-to(md) {
+            padding-top: 100px;
+            padding-bottom: 70px; 
+        }
+        
+        
+
+        & .container {
+            margin-left: auto;
+            margin-right: auto;
+            
+
+            & h1 {
+                font-family: "Mulish-800";
+                font-size: clamp(2.25rem, 2.75vw, 5rem); 
+                text-align: center;
+                padding: 0px 20px;
+                text-shadow: $grey-shadow-big-bright;                 
+                color: $white;
+            }
+            & h3 {
+                font-family: "Mulish-800";
+                font-size: clamp(1.5rem, 2.25vw, 4rem); 
+                text-align: center;
+                color: $white;
+                text-shadow: rgba(0, 0, 0, 0.8) 0px 3px 10px;                 
+                padding: 20px;        
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }        
+    }
+    &__container {
+        display: grid;
+        grid-template-rows: 32% 32% 32%;
+        grid-template-columns: 100%;
+        gap: 20px;
+        position: relative;
+        height: fit-content;   
+        margin: auto;
+        
+        @include respond-to(md) {               
+            grid-template-columns: 32% 32% 32%;
+            grid-template-rows: 100%;
+        }
+        
+        
+        &__item {
+            background: $white;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: $grey-shadow-big;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 30px;
+            margin-top: 20px; 
+
+            @include respond-to(xs) {
+                width:  80%;            
+            }
+            @include respond-to(sm) {
+                width:  60%;            
+            }
+            @include respond-to(md) {
+                width:  100%;      
+                margin-top: 50px;      
+            }
+            
+            &:hover h2{
+                text-shadow: $blue-shadow-big;     
+                color: $dark-blue;           
+            }
+            &:hover button{
+                border: 2px solid $blue;
+                box-shadow: $blue-shadow-big;     
+                background: linear-gradient(to bottom, $light-blue, $blue, $dark-blue);    
+            }
+            & h4 {
+                font-family: 'Play-700';
+                font-size: 24px;
+                padding: 0px 20px 10px;
+                text-align: center;
+                color: $blue;
+                text-shadow: $blue-shadow;
+                
+                @include respond-to(md)  {
+                    font-size: 25px;
+                    padding: 20px 20px 30px;
+                }
+            }
+            & p {
+                font-family: 'Play-400';
+                font-size: 16px;
+                padding-left: 20px;
+                padding-right: 20px;
+                text-align: center;
+                color: $grey;
+            }
+            & h2 {
+                font-family: 'Play-700';
+                font-size: 35px;
+                padding: 30px 0px;
+                color: $blue;
+                text-shadow: $blue-shadow;
+
+                @include respond-to(md)  {
+                    font-size: 45px;
+                    padding: 40px 0px;
+                }
+            }
+            & ul {
+                padding: 0;
+                & li {
+                    list-style: none;
+                    text-align: center;
+                    font-family: 'Play-400';
+                    color: $grey;
+
+                    @include respond-to(md)  {
+                        padding-bottom: 5px;
+                    }
+
+                    
+                }
+            }
+            & button {
+                background: linear-gradient(to bottom, $light-blue, $blue);  
+                color: $white;
+                font-size: clamp(1.25rem, 1vw, 1rem); 
+                font-family: "Mulish-700";
+                text-transform: uppercase;     
+                box-shadow: $blue-shadow;
+                letter-spacing: 1px;
+                margin-top: 20px;                
+                border: 2px solid $light-blue;
+
+                
+                
+            }
+        }
+    }
+    
+}
