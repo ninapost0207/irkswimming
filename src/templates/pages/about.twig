@@ -1,0 +1,31 @@
+{% extends "../_layout.twig" %}
+{% set pageTitle = 'About Page' %}
+
+{% block header %}
+	{% include '../layouts/_header.twig' %}
+{% endblock %}
+
+{% block content %}
+	<section class="content">
+		<div class="about-page__background">
+			<div class="about-page__container ">
+				<h1>О нас</h1>
+				<p>Школа основана в 2017 году. Уже 5 лет тренировки успешно проводят тренеры по плаванию высшей категории и действующие мастера спорта с физкультурным образованием.
+				</p>
+				<p>Мы воспитываем в детях стремление к победе, дисциплину, выносливость и спортивных дух. Тренера заинтересованы в результате воспитанников.
+				</p>
+				<ul>
+					<li>- Персональные и групповые тренировки.</li>
+					<li>- Восстановление после травм.</li>
+					<li>- Гидрореабелитация.</li>
+					<li>- Укрепление здоровья вашего ребёнка.</li>
+				</ul>
+			</div>
+
+		</div>
+	</section>
+{% endblock %}
+
+{% block footer %}
+	{% include '../layouts/_footer.twig' with {} %}
+{% endblock %}

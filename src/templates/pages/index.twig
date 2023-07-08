@@ -1,0 +1,25 @@
+{% extends "../_layout.twig" %}
+{% set pageTitle = 'Home page' %}
+
+{% block header %}
+	{% include '../layouts/_header.twig' %}
+{% endblock %}
+
+{% block content %}
+	<section class="content">
+		<div class="main-page__background-photo">
+			<div class="main-page__description">
+				<h1>Добро пожаловать на сайт Федерации плавания Иркутской области «Байкал»</h1>
+				<p>Основной целью федерации является развитие и пропаганда плавания, организация и проведение спортивных мероприятий, подготовка спортсменов сборной региона.</p>
+				<button>
+					<a href="/contacts.html" class=" transition">Записаться</a>
+				</button>
+
+			</div>
+		</div>
+	</section>
+{% endblock %}
+
+{% block footer %}
+	{% include '../layouts/_footer.twig' with {} %}
+{% endblock %}

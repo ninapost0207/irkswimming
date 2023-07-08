@@ -1,0 +1,153 @@
+{% extends "../_layout.twig" %}
+{% set pageTitle = 'Downloads page' %}
+
+{% set downloads = {
+    documents: [{
+        header: "Устав ФПИО Байкал",
+        url: "../..//assets/documents/docs/Устав_ФПИО_Байкал.PDF",
+		download: "Устав_ФПИО_Байкал.PDF"        
+    }, {
+        header: "Свидетельство о регистрации ФПИО Байкал",
+        url: "../../assets/documents/docs/Св-во_о_регистрации_ФПИО_Байкал.pdf",
+		download: "Св-во_о_регистрации_ФПИО_Байкал.pdf"        
+    }, {
+        header: "Акредитация Минспорта ИО ФПИО Байкал",
+        url: "../../assets/documents/docs/Акредитация_минспорта_ИО_ФПИО_Байкал.pdf",
+		download: "Акредитация_минспорта_ИО_ФПИО_Байкал.pdf"        
+    }],
+    competitions: [{
+        header: "Кубок ИО 11-12.05.23 Стартовый 1 день",
+        url: "../../assets/documents/competitions/Кубок_ИО_11-12.05.23_Стартовый_1_день.pdf",
+		download: "Кубок_ИО_11-12.05.23_Стартовый_1_день.pdf"
+    }, {
+        header: "Кубок ИО Итог 1 день",
+        url: "../../assets/documents/competitions/Итог_1_день.pdf",
+		download: "Итог_1_день.pdf"
+    }, {
+        header: "Кубок ИО Стартовый 2 день",
+        url: "../../assets/documents/competitions/Стартовый_2_день.pdf",
+		download: "Стартовый_2_день.pdf"
+    }, {
+        header: "Кубок ИО ИТОГ ОБЩИЙ",
+        url: "../../assets/documents/competitions/ИТОГ_ОБЩИЙ.pdf",
+		download: "ИТОГ_ОБЩИЙ.pdf"
+    }, {
+        header: "Cоревнования памяти Марии Цукановой",
+        url: "../../assets/documents/competitions/Стартовый_протокол_Цуканова.docx",
+		download: "Стартовый_протокол_Цуканова.docx"
+    }, {
+        header: "Итог 1 день Cоревнований памяти Марии Цукановой",
+        url: "../../assets/documents/competitions/итог_1_день.docx",
+		download: "итог_1_день.docx"
+    }, {
+        header: "Итоговый протокол coревнований памяти Марии Цукановой",
+        url: "../../assets/documents/competitions/Итоговый_протокол_Цуканова 2023.docx",
+		download: "Итоговый_протокол_Цуканова 2023.docx"
+    }],
+	archive: [{
+		header: "Регламент КС 12.2022 Иркутск",
+        url: "../../assets/documents/competitions/Регламент_КС_12.2022_Иркутск.pdf",
+		download: "Регламент_КС_12.2022_Иркутск.pdf"
+	}, {
+		header: "Стартовый 1 день",
+        url: "../../assets/documents/competitions/Стартовый_1_день.pdf",
+		download: "Стартовый_1_день.pdf"
+	}, {
+		header: "Кубок Попова стартовый 1 день",
+        url: "../../assets/documents/competitions/Кубок_Попова_стартовый_1_день.pdf",
+		download: "Кубок_Попова_стартовый_1_день.pdf"
+	}, {
+		header: "Кубок Попова стартовый 2 день",
+        url: "../../assets/documents/competitions/Кубок_Попова_стартовый_2_день.pdf",
+		download: "Кубок_Попова_стартовый_2_день.pdf"
+	}]
+}%}
+
+
+{% block header %}
+	{% include '../layouts/_header.twig' %}
+{% endblock %}
+
+{% block content %}
+	<section class="content downloads-page">
+		<div class="downloads-page__background-photo">
+			<div class="downloads-page__cards">
+				<div class="downloads-page__cards__item">
+					<a href="#docs">
+						<span class="text-underlined">Документы</span>
+						<img src="../../assets/images/woman1.jpg" alt="docs">
+					</a>
+				</div>
+				<div class="downloads-page__cards__item">
+					<a href="#competitions">
+						<span class="text-underlined">Соревнования</span>
+						<img src="../../assets/images/swimming.jpg" alt="competitions">
+					</a>
+				</div>
+				<div class="downloads-page__cards__item">
+					<a href="#archive">
+						<span class="text-underlined">Архив</span>
+						<img src="../../assets/images/ontheback.jpg" alt="archive">
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="downloads-page__docs__container">
+			<div class="downloads-page__docs__container__item container" id="docs">
+				<h3>Документы организации</h3>
+				<ul>
+					<li>
+						<div class="downloads-page__docs__container__item__line"></div>
+					</li>
+					{% for doc in downloads.documents %}
+						<li>
+							<a href="{{ doc.url }}" download="{{ doc.download }}" class="text-underlined" title="СКАЧАТЬ ФАЙЛ">{{ doc.header }}</a>
+						</li>
+						<li>
+							<div class="downloads-page__docs__container__item__line"></div>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+			<div class="downloads-page__docs__container__item container" id="competitions">
+				<h3>Cоревнования</h3>
+				<ul>
+					<li>
+						<div class="downloads-page__docs__container__item__line"></div>
+					</li>
+					{% for doc in downloads.competitions %}
+						<li>
+							<a href="{{ doc.url }}" download="{{ doc.download }}" class="text-underlined" title="СКАЧАТЬ ФАЙЛ">{{ doc.header }}</a>
+						</li>
+						<li>
+							<div class="downloads-page__docs__container__item__line"></div>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+			<div class="downloads-page__docs__container__item container" id="archive">
+				<h3>Архив соревнований</h3>
+				<ul>
+					<li>
+						<div class="downloads-page__docs__container__item__line"></div>
+					</li>
+					{% for doc in downloads.archive %}
+
+						<li>
+							<a href="{{ doc.url }}" download="{{ doc.download }}" class="text-underlined" title="СКАЧАТЬ ФАЙЛ">{{ doc.header }}</a>
+						</li>
+						<li>
+							<div class="downloads-page__docs__container__item__line"></div>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+
+
+		</div>
+	</section>
+{% endblock %}
+
+{% block footer %}
+	{% include '../layouts/_footer.twig' with {} %}
+{% endblock %}

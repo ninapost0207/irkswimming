@@ -1,0 +1,42 @@
+.modal {
+    transform: scale(0);
+    &.opened {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;    
+        gap: 0.4rem;
+        width: 35%;
+        padding: 1.3rem;
+        min-height: 35%;
+        position: absolute;
+        top: 25%;
+        left: 33%;
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 15px;
+        z-index: 2;  
+        transform: scale(1);
+        transition: transform 0.5s 0s ease-in-out;        
+    }
+
+    & h3 {
+        font-family: "Mulish-700";
+        font-size: 1.75rem;    
+        color: $grey;
+        text-shadow: rgba(0, 153, 255, 0.5) 0px 2px 5px;
+        letter-spacing: 0.5px;
+        padding-bottom: 25px;
+        text-align: center;
+    }
+
+    & p {
+        font-family: 'Play-400';
+        font-size: 20px;
+        width: 100%;
+        color: $grey;
+        text-align: center;
+    }
+    
+}
+
+

@@ -1,0 +1,89 @@
+{% extends "../_layout.twig" %}
+{% set pageTitle = 'Contacts page' %}
+
+{% set contacts_icons = [
+	{
+		url: "https://instagram.com/swimming.irkutsk?igshid=NTc4MTIwNjQ2YQ==",
+		img_url: "../../assets/images/icons/instagram_icon.svg",
+		img_alt: "instagram"
+	},	{
+		url: "https://t.me/fpiobaikal",
+		img_url: "../../assets/images/icons/telegram_icon.svg",
+		img_alt: "telegram"
+	},	{
+		url: "https://vk.com",
+		img_url: "../../assets/images/icons/vk_icon.svg",
+		img_alt: "vkontakte"
+	}
+] %}
+
+{% block header %}
+	{% include '../layouts/_header.twig' %}
+{% endblock %}
+
+{% block content %}
+	<section class="content">
+		<div class="contacts-page__background">
+			<div class="modal">
+				<div>
+					<h3>Ваша заявка отправлена</h3>
+					<p>Наш администратор свяжется с Вами в ближайшее время</p>
+				</div>
+			</div>
+			<div class="contacts-page__container container">
+				<form action="" id="form-submit">
+					<h2>Оставить заявку</h2>
+					<label for="name">Ваше имя*</label>
+					<input type="text" id="name" required autocomplete="name"/>
+					<label for="phone">Номер телефона*</label>
+					<input type="tel" id="phone" name="phone" required pattern="[0-9]{11}" autocomplete="phone"/>
+					<label for="info">Дополнительная информация</label>
+					<textarea name="info" id="info" rows="8" cols="50" autocomplete="off"></textarea>
+					<button type="submit" class="btn-open">Отправить</button>
+				</form>
+				<div class="contacts-page__contacts">
+					<p>Телефон, электронная почта:</p>
+					<div class="contacts-page__contacts__item">
+						<a href="tel:+7111111111111">
+							<div class="row align-center">
+								<img src="../../assets/images/icons/phone3_icon.svg" alt="phone" class="contacts-page__contacts__item__icon">
+								<div class="contacts-page__contacts__item_right text-underlined">+7 111111111111</div>
+							</div>
+						</a>
+
+						<a href="mailto:email_address@gmail.com" target="_blank">
+							<div class="row align-center">
+								<img src="../../assets/images/icons/email1_icon.svg" alt="email" class="contacts-page__contacts__item__icon">
+								<div class="contacts-page__contacts__item_right text-underlined">email_address@gmail.com</div>
+							</div>
+						</a>
+					</div>
+					<p>Адрес:</p>
+					<div class="contacts-page__contacts__item">
+						<a href="https://go.2gis.com/akm0i" target="_blank">
+							<div class="row align-center">
+								<img src="../../assets/images/icons/location3_icon.svg" alt="address" class="contacts-page__contacts__item__icon">
+								<div class="contacts-page__contacts__item_right text-underlined">664050, Иркутская область, г.Иркутск, ул.Байкальская, 253/1</div>
+							</div>
+						</a>
+					</div>
+					<p>Мы в социальных сетях:</p>
+					<div class="contacts-page__contacts__item">
+						<div class="row social-icons__block">
+							{% for icon in contacts_icons %}
+								<a href="{{ icon.url }}" target="_blank">
+									<img src="{{ icon.img_url }}" alt="{{ icon.img_alt}}">
+								</a>
+							{% endfor %}
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}
+
+{% block footer %}
+	{% include '../layouts/_footer.twig' with {} %}
+{% endblock %}

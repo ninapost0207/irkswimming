@@ -1,0 +1,101 @@
+.main-page {
+    &__background-photo {
+        width: 100%;        
+        background-image: url('../images/water1.jpg');
+        background-size: cover;    
+        position: relative;  
+        height: fit-content;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        @include respond-to(xs) {
+            padding-top: 50px;
+            padding-bottom: 50px; 
+        }
+        @include respond-to(sm) {
+            padding-top: 60px;
+            padding-bottom: 60px; 
+        }
+        @include respond-to(md) {
+            padding-top: 70px;
+            padding-bottom: 70px; 
+        }
+        @include respond-to(lg) {
+            padding-top: 100px;
+            padding-bottom: 100px; 
+        }
+    }  
+    &__description {
+        background-color: $blue;  
+        position: relative;
+        width: min(90%, 800px);
+        height: fit-content;        
+        margin: 0px auto;        
+        padding: 50px 30px;
+        border-radius: 5px; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 40px;
+        align-items: center;
+        box-shadow: $grey-shadow-big;
+        
+
+        @include respond-to(md) {
+            padding: 50px;        
+            gap: 50px; 
+        }
+        @include respond-to(lg)  {
+            padding: 70px;
+        }
+
+        & h1 {
+            font-family: "Mulish-700";
+            font-size: clamp(1.75rem, 2.5vw, 5rem); 
+            text-align: center;
+            color: $white;
+            text-shadow: rgba(0, 0, 0, 0.3) 0px 5px 10px; 
+            letter-spacing: 0.5px;
+        }
+        & p {
+            font-family: "Mulish-500";
+            font-size: clamp(1.25rem, 1.5vw, 1.75rem);             
+            color: $white;    
+            text-shadow: rgba(0, 0, 0, 0.2) 0px 5px 5px;
+            letter-spacing: 1px;      
+            padding-bottom: 20px;
+            text-align: center;
+            @include respond-to(md) {
+                text-align: start;  
+                text-indent: 50px; 
+            }     
+            
+        }
+        & button {
+            background: linear-gradient(to bottom, $white, $light-light-blue, $light-blue);
+            color: $grey;
+            text-align: center;
+            font-size: clamp(1.2rem, 1.75vw, 2rem); 
+            font-family: "Mulish-700";
+            text-transform: uppercase;     
+            box-shadow: $grey-shadow-big; 
+            border: 2px solid $light-blue;   
+            letter-spacing: 1px;
+            @include respond-to(md) {
+                margin-top: 20px; 
+            } 
+            
+
+            &:hover {
+                box-shadow: $grey-shadow-big-bright; 
+            }
+            & a {
+                color: $grey;
+            }
+        }
+    }    
+}
+
+
+
+
+
