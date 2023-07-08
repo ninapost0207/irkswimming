@@ -28,7 +28,7 @@ function submitForm() {
     modal()
 };
 function sendMessage(message) {
-    const bot = new Bot("6379245837:AAFfp8FBOAPTK7sUQHcdZVwpYC5s-1NT7dY", "1715714284");
+    const bot = new Bot("---------------", "---------------");
 
     bot.sendMessage(JSON.stringify(message), null, null, true)
         .then(res => {
