@@ -8,3 +8,4 @@ const switcher = themeSwitcher({anchor: '.theme-switcher__container input'});
 pageSwitcher();
 switcher.connect();
 submitForm(); 
+ 
