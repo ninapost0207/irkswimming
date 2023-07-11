@@ -8,6 +8,7 @@ clean           = require('gulp-clean'),
 twig            = require('gulp-twig'),
 ttf2woff        = require('gulp-ttf2woff'),
 ttf2woff2       = require('gulp-ttf2woff2'),
+imagemin        = require('gulp-imagemin'),
 sourcemaps      = require('gulp-sourcemaps'),
 autoprefixer    = require('gulp-autoprefixer'),
 postcss         = require('gulp-postcss'),
@@ -43,10 +44,12 @@ function fontsConverter() {
 }
 
 
-function imgCopy() { //copy images to 'web/assets/img' folder
+function imgMinify() { //copy images to 'web/assets/img' folder
     return src('src/assets/images/**/*.*')
-        .pipe(dest('build/assets/images/'))
-        .pipe(browsersync.stream());
+        .pipe(imagemin())
+		.pipe(dest('build/assets/images/'))
+       // .pipe(dest('build/assets/images/'))
+       // .pipe(browsersync.stream());
 }
 
 
@@ -119,7 +122,7 @@ function createServer() {
     watch("./src/templates/**/*.twig").on("change", series(compileTwig));
     watch("./src/assets/scss/**/*.scss").on("change", series(scssToCss));
     //watch("./src/assets/js/**/*.*").on('change', series(jsCopy));
-    watch("./src/assets/images/**/*.*").on('all', series(imgCopy, reload));
+    watch("./src/assets/images/**/*.*").on('all', series(imgMinify, reload));
     watch("./src/assets/fonts/**/*.ttf").on('all', series(fontsConverter));
     watch('src/assets/js/**/*.ts', tsCompiler);
 };
@@ -145,7 +148,7 @@ const newsCreator = async ({allNews, cb}) => {
     }
     
     Twig.renderFile('./src/templates/layouts/_news-previewer.twig', { news:allNews }, async (err, html) => {
-        await fse.writeFile(`${pathToNewsPreviewer}/all-news.twig`, html, cb)
+        await fse.writeFile(`${pathToNewsPreviewer}/news.twig`, html, cb)
     });
 
 }
@@ -160,8 +163,8 @@ function createNews(cb) { //creating all news preview page with all news from th
 
 
 
-const server = series(clear, parallel(compileTwig, imgCopy, fontsConverter, scssToCss, tsCompiler), createNews, createServer);
+const server = series(clear, parallel(compileTwig, fontsConverter, imgMinify, scssToCss, tsCompiler), createNews, createServer);
 exports.server = server;
 
-
+exports.imgMinify = imgMinify;
 

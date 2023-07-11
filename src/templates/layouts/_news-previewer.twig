@@ -1,14 +1,37 @@
-{% for newsItem in news %}
+{% extends "../_layout.twig" %}
+{% set pageTitle = 'News page' %}
 
-	<div class="news-page__cards__container__item">
-		<a href="./news/{{ newsItem._id }}.html" class="transition">
-			<div>
-				<img src="{{ newsItem.url }}" alt="{{ newsItem.header }}">
-				<h6>{{ newsItem.header }}</h6>
-				<p class="news-page__cards__container__item__date">{{ newsItem.date }}</p>
-				<p>{{ newsItem.description }}</p>
+
+{% block header %}
+	{% include '../layouts/_header.twig' %}
+{% endblock %}
+
+{% block content %}
+	<section class="content">
+		<div class="news-page__background">
+			<h1>Новости</h1>
+			<h3>Следите за нашими новостями,
+				<br>акциями и соревнованиями</h3>
+
+			<div class="news-page__cards__container container">
+				{% for newsItem in news %}
+					<div class="news-page__cards__container__item">
+						<a href="./news/{{ newsItem._id }}.html" class="transition">
+							<div>
+								<img src="{{ newsItem.url }}" alt="{{ newsItem.header }}">
+								<h6>{{ newsItem.header }}</h6>
+								<p class="news-page__cards__container__item__date">{{ newsItem.date }}</p>
+								<p>{{ newsItem.description }}</p>
+							</div>
+							<span class="text-underlined">Подробнее...</span>
+						</a>
+					</div>
+				{% endfor %}
 			</div>
-			<span class="text-underlined">Подробнее...</span>
-		</a>
-	</div>
-{% endfor %}
+		</div>
+	</section>
+{% endblock %}
+
+{% block footer %}
+	{% include '../layouts/_footer.twig' with {} %}
+{% endblock %}

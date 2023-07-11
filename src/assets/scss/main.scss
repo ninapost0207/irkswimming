@@ -218,10 +218,10 @@ li {
             background: linear-gradient(to bottom, $blue, $dark-blue, $dark-dark-blue);  
             & h1 {                
                 text-shadow: $blue-shadow;                
-                color: $dark-dark-blue;
+                color: $white;
             }
             & h3 {                
-                color: $dark-dark-blue;
+                color: $white;
                 text-shadow: $blue-shadow;                 
             }
         }
