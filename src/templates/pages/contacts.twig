@@ -24,22 +24,16 @@
 {% block content %}
 	<section class="content">
 		<div class="contacts-page__background">
-			<div class="modal">
-				<div>
-					<h3>Ваша заявка отправлена</h3>
-					<p>Наш администратор свяжется с Вами в ближайшее время</p>
-				</div>
-			</div>
 			<div class="contacts-page__container container">
-				<form action="" id="form-submit">
+				<form id="form-submit">
 					<h2>Оставить заявку</h2>
 					<label for="name">Ваше имя*</label>
-					<input type="text" id="name" required autocomplete="name"/>
+					<input type="text" id="name" autocomplete="name" required/>
 					<label for="phone">Номер телефона*</label>
-					<input type="tel" id="phone" name="phone" required pattern="[0-9]{11}" autocomplete="phone"/>
+					<input type="tel" id="phone" name="phone" pattern="[0-9]{11}" autocomplete="phone" required/>
 					<label for="info">Дополнительная информация</label>
 					<textarea name="info" id="info" rows="8" cols="50" autocomplete="off"></textarea>
-					<button type="submit" class="btn-open">Отправить</button>
+					<button type="submit">Отправить</button>
 				</form>
 				<div class="contacts-page__contacts">
 					<p>Телефон, электронная почта:</p>
@@ -79,6 +73,10 @@
 
 					</div>
 				</div>
+			</div>
+			<div class="modal">
+				<h3>Ваша заявка отправлена</h3>
+				<p>Наш администратор свяжется с Вами в ближайшее время</p>
 			</div>
 		</div>
 	</section>

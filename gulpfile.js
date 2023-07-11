@@ -1,4 +1,9 @@
-const { src, dest, series, parallel, watch, gulp } = require('gulp'),
+const fse = require('fs-extra')
+const newsList = require('./src/data/news')
+//const newsGenerator = require('./src/processors/newsGenerator')
+var Twig = require('twig') // Twig module
+
+const { src, dest, parallel, watch, series } = require('gulp'),
 clean           = require('gulp-clean'),
 twig            = require('gulp-twig'),
 ttf2woff        = require('gulp-ttf2woff'),
@@ -9,9 +14,7 @@ postcss         = require('gulp-postcss'),
 sass            = require('gulp-sass')(require('sass')),
 browsersync     = require('browser-sync').create(),
 reload          = browsersync.reload,
-ts              = require('gulp-typescript'),
-merge           = require('merge2')
-
+ts              = require('gulp-typescript')
 
 
 
@@ -23,16 +26,7 @@ function clear() {
 
 function compileTwig() { //compile twig files
     return src('src/templates/pages/**/*.twig')
-        .pipe(twig({
-            data: {
-                title: 'Gulp and Twig',
-                benefits: [
-                    'Fast',
-                    'Flexible',
-                    'Secure'
-                ]
-            }
-        }))
+        .pipe(twig())
         .pipe(dest('build/'))
         .pipe(browsersync.stream());
 }
@@ -85,24 +79,27 @@ function scssToCssBuild() { //formatting all scss files to single 'main.css' fil
 
 
 function jsCopy() { //copy js to 'build/assets/js' folder
-    return src('src/assets/js/**/*.*')
+    return src(['src/assets/js/**/*.*', '!src/data/**/*.js', '!src/processors/**/*.js'])
         .pipe(sourcemaps.init())
         .pipe(sourcemaps.write('.'))
         .pipe(dest('build/assets/js/'))
         .pipe(browsersync.stream());
 }
 
-function tsToJs() {
-    var tsResult = gulp.src('src/assets/**/*.ts')
-        .pipe(ts({
-            declaration: true
-        }));
- 
-    return merge([
-        tsResult.dts.pipe(dest('build/assets/js/')),
-        tsResult.js.pipe(dest('build/assets/js/'))
-    ]);
+
+//var tsProject = ts.createProject("tsconfig.json");
+var tsProject = ts.createProject("tsconfig.json", {
+    typescript: require("typescript")
+});
+
+
+function tsCompiler () { // compile TS to JS
+    return src('src/assets/js/**/*.ts')
+        .pipe(tsProject())
+        .js
+        .pipe(dest('build/assets/js/'));
 };
+
 
 
 
@@ -121,14 +118,50 @@ function createServer() {
 
     watch("./src/templates/**/*.twig").on("change", series(compileTwig));
     watch("./src/assets/scss/**/*.scss").on("change", series(scssToCss));
-    watch("./src/assets/js/**/*.*").on('change', series(jsCopy));
+    //watch("./src/assets/js/**/*.*").on('change', series(jsCopy));
     watch("./src/assets/images/**/*.*").on('all', series(imgCopy, reload));
     watch("./src/assets/fonts/**/*.ttf").on('all', series(fontsConverter));
-    //watch("./src/assets/js/**/*.*").on('change', series(tsToJs));
+    watch('src/assets/js/**/*.ts', tsCompiler);
 };
 
+//======================================================================================================
+const pathToNews = './src/templates/pages/news/'
+const pathToNewsPreviewer = './src/templates/pages'
+
+
+const newsCreator = async ({allNews, cb}) => {
+    /*await fse.emptyDir(pathToNews)
+    for (const newsItem of allNews) {
+        const { header, _id, text, url } = newsItem
+        const content = await newsGenerator({ header, text, url})
+        console.log(typeof content);
+        await fse.writeFile(`${pathToNews}/${_id}.twig`, content, cb)
+    }*/
+
+    for (const newsItem of allNews) {
+        Twig.renderFile('./src/templates/layouts/_news-detailed.twig', { newsItem }, async (err, html) => {
+            await fse.writeFile(`${pathToNews}/${newsItem._id}.twig`, html, cb)
+        }); 
+    }
+    
+    Twig.renderFile('./src/templates/layouts/_news-previewer.twig', { news:allNews }, async (err, html) => {
+        await fse.writeFile(`${pathToNewsPreviewer}/all-news.twig`, html, cb)
+    });
+
+}
+
+
+function createNews(cb) { //creating all news preview page with all news from the file
+    newsCreator({allNews: newsList, cb})
+    return 
+}
 
 
 
-const server = series(clear, parallel(compileTwig, imgCopy, fontsConverter, jsCopy, scssToCss), createServer);
+
+
+const server = series(clear, parallel(compileTwig, imgCopy, fontsConverter, scssToCss, tsCompiler), createNews, createServer);
 exports.server = server;
+
+
+

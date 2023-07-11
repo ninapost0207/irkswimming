@@ -1,12 +1,15 @@
-.newsDetailed-page {    
-    &__background { 
+.newsDetailed-page {
+    &__content {
+        display: none;
+        border: 3px solid red;
+    }
+    &__background {        
         width: 100%;        
-        background-image: url('../../images/splashes.jpg');
+        background-image: url('../images/splashes.jpg');
         background-size: cover;    
         position: relative;  
         height: fit-content;
         padding: 30px 10px;
-        
         
         @include respond-to(xs) {
             padding-top: 50px;

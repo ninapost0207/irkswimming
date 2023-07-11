@@ -4,8 +4,8 @@ function modal(arg) {
     
 
     const openModal = function () {
-        modal.classList.add("opened");
-        overlay.classList.add("opened");
+        modal?.classList.add("opened");
+        overlay?.classList.add("opened");
         setTimeout(() => closeModal(), 2000)
 
     };
@@ -16,20 +16,22 @@ function modal(arg) {
     
 
     const closeModal = () => {
-        modal.classList.remove("opened");
-        overlay.classList.remove("opened");
+        modal?.classList.remove("opened");
+        overlay?.classList.remove("opened");
     };
 
     document.addEventListener("keydown", function (e) {
-        if (e.key === "Escape" && modal.classList.contains("opened")) {
+        if (e.key === "Escape" && modal?.classList.contains("opened")) {
             closeModal();
         }
       });
     window.addEventListener('click', (e) => {
-        if (e.target.className === 'overlay') {
-            modal.classList.remove("opened");
-            overlay.classList.remove("opened")
-        }
+        if (e.target instanceof HTMLElement) {            
+            if (e.target.className === 'overlay') {
+                modal?.classList.remove("opened");
+                overlay?.classList.remove("opened")
+            }
+          }
     });  
 };
 

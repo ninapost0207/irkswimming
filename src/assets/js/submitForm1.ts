@@ -1,5 +1,5 @@
 "use strict";
-import modal from './modal.js';
+import modal from './modal1.js';
 
 function submitForm() {
     const _form = document.querySelector('#form-submit');
@@ -7,9 +7,10 @@ function submitForm() {
     _form?.addEventListener('submit', (e) => {
         e.preventDefault();
          
-        let _name = document.querySelector('#name');
-        let _phone = document.querySelector('#phone');
-        let _info = document.querySelector('#info');
+        let _name = document.querySelector('#name') as HTMLInputElement;
+        let _phone = document.querySelector('#phone') as HTMLInputElement;
+        let _info = document.querySelector('#info') as HTMLInputElement;
+        
        
         if (_name.value !== "" && _phone.value !== "") {
           let message = {
@@ -32,19 +33,20 @@ function sendMessage(message) {
     const bot = new Bot("6379245837:AAFfp8FBOAPTK7sUQHcdZVwpYC5s-1NT7dY", "1715714284");
     modal(true);
     bot.sendMessage(JSON.stringify(message), null, null, true)
-        //.then(res => {
-          
-        //})
+        //.then(res => {})
         .catch(err => alert(err))    
 }
 
 class TelegramBotSetup {
-    constructor(token) {
+    readonly token: string;  
+    readonly requestUrl: string;
+
+    constructor(token) {        
       this.token = token;
       this.requestUrl = 'https://api.telegram.org/bot';
     }
   
-    api(type, method, body) {
+    api(type, method, body?) {
       return new Promise((resolve, reject) => {
         fetch(this.requestUrl + this.token + type, {
           method: method,
@@ -59,6 +61,7 @@ class TelegramBotSetup {
   }
   
   class Bot extends TelegramBotSetup {
+    dcid: string;
     constructor(botToken, defaultChatID) {
       super(botToken);
       this.dcid = defaultChatID;

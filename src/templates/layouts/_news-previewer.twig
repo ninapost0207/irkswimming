@@ -1,0 +1,14 @@
+{% for newsItem in news %}
+
+	<div class="news-page__cards__container__item">
+		<a href="./news/{{ newsItem._id }}.html" class="transition">
+			<div>
+				<img src="{{ newsItem.url }}" alt="{{ newsItem.header }}">
+				<h6>{{ newsItem.header }}</h6>
+				<p class="news-page__cards__container__item__date">{{ newsItem.date }}</p>
+				<p>{{ newsItem.description }}</p>
+			</div>
+			<span class="text-underlined">Подробнее...</span>
+		</a>
+	</div>
+{% endfor %}

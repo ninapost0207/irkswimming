@@ -2,9 +2,7 @@ function themeSwitcher ({anchor}) {
     const _root = document.querySelector('#root');
     const _themeSwitcher = document.querySelector(anchor);   
    
-    console.log(555);
-
-
+    
     const enableDarkMode = () => {
         _root?.classList.add("dark");        
         localStorage.setItem("theme", "dark");        
@@ -15,20 +13,20 @@ function themeSwitcher ({anchor}) {
         localStorage.removeItem("theme");        
     };
 
-    const changeTheme = () => {
+    const changeTheme = () => {      
         _themeSwitcher?.checked ? enableDarkMode() : disableDarkMode();        
     }
 
     
-    const createSwitcher = () => {        
-        _themeSwitcher.addEventListener('click', changeTheme)
-        _themeSwitcher.checked = localStorage.getItem('theme') === 'dark' ? true : false
-        changeTheme(_themeSwitcher)
+    const createSwitcher = () => {     
         
+        _themeSwitcher?.addEventListener('click', changeTheme)
+        _themeSwitcher.checked = localStorage.getItem('theme') === 'dark' ? true : false
+        changeTheme()
     }
     
     const removeSwitcher = () => {
-        _themeSwitcher.removeEventListener('click', changeTheme)
+        _themeSwitcher?.removeEventListener('click', changeTheme)
     }
 
     const getTheme = () => _themeSwitcher.checked ? 'dark' : '';
@@ -36,7 +34,7 @@ function themeSwitcher ({anchor}) {
     const setTheme = (newTheme) => {
         if (newTheme === "dark") {
             _themeSwitcher.checked = true;
-            changeTheme(_themeSwitcher);
+            changeTheme();
         }
     }
 
@@ -48,6 +46,5 @@ function themeSwitcher ({anchor}) {
     }
 
 }
-
 
 export default themeSwitcher;
