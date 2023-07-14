@@ -1,0 +1,52 @@
+{% extends "../_layout.twig" %}
+{% set pageTitle = 'Downloads page' %}
+
+
+{% block header %}
+	{% include '../layouts/_header.twig' %}
+{% endblock %}
+
+{% block content %}
+	<section class="content downloads-page">
+		<div class="downloads-page__background-photo">
+			<div class="downloads-page__cards">
+
+				{% for downloads in downloadsList %}
+					<div class="downloads-page__cards__item">
+						<a href="#{{ downloads.header }}">
+							<span class="text-underlined">{{ downloads.header }}</span>
+							<img src="{{ downloads.img }}" alt="{{ downloads.header }}">
+						</a>
+					</div>
+				{% endfor %}
+
+			</div>
+		</div>
+		<div class="downloads-page__docs__container">
+			{% for downloads in downloadsList %}
+
+				<div class="downloads-page__docs__container__item container" id="{{ downloads.header }}">
+					<h3>{{ downloads.header }}</h3>
+					<ul>
+						<li>
+							<div class="downloads-page__docs__container__item__line"></div>
+						</li>
+						{% for doc in downloads.docs %}
+							<li>
+								<a href="{{ doc.url }}" download="{{ doc.download }}" class="text-underlined" title="СКАЧАТЬ ФАЙЛ">{{ doc.header }}</a>
+							</li>
+							<li>
+								<div class="downloads-page__docs__container__item__line"></div>
+							</li>
+						{% endfor %}
+					</ul>
+				</div>
+			{% endfor %}
+
+		</div>
+	</section>
+{% endblock %}
+
+{% block footer %}
+	{% include '../layouts/_footer.twig'  %}
+{% endblock %}

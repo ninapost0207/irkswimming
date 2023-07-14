@@ -12,7 +12,7 @@
 			<div class="newsDetailed-page__container container">
 				<h1>{{ newsItem.header }}</h1>
 				<img src="{{ newsItem.url }}" alt="{{ newsItem.header }}">
-				<div>{{ newsItem.text }}</div>
+				<p>{{ newsItem.text }}</p>
 				<a href="/news.html" class="text-underlined transition">Вернуться к новостям</a>
 			</div>
 		</div>
@@ -20,5 +20,5 @@
 {% endblock %}
 
 {% block footer %}
-	{% include '../layouts/_footer.twig' with {} %}
+	{% include '../layouts/_footer.twig' %}
 {% endblock %}

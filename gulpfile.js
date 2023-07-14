@@ -1,5 +1,6 @@
 const fse = require('fs-extra')
 const newsList = require('./src/data/news')
+const downloadsList = require('./src/data/downloads')
 //const newsGenerator = require('./src/processors/newsGenerator')
 var Twig = require('twig') // Twig module
 
@@ -159,12 +160,25 @@ function createNews(cb) { //creating all news preview page with all news from th
     return 
 }
 
+//=============================================================================================================
+
+const pathToDownloadsPreviewer = './src/templates/pages'
+
+const downloadsCreator = async ({downloads, cb}) => {
+    Twig.renderFile('./src/templates/layouts/_downloads-previewer.twig', { downloadsList:downloads }, async (err, html) => {
+        await fse.writeFile(`${pathToDownloadsPreviewer}/downloads.twig`, html, cb)
+    });
+}
+function createDownloads(cb) { //creating all news preview page with all news from the file
+    downloadsCreator({downloads: downloadsList, cb})
+    return 
+}
 
 
 
 
-const server = series(clear, parallel(compileTwig, fontsConverter, imgMinify, scssToCss, tsCompiler), createNews, createServer);
+const server = series(clear, parallel(compileTwig, fontsConverter, imgMinify, scssToCss, tsCompiler), createNews, createDownloads, createServer);
 exports.server = server;
 
-exports.imgMinify = imgMinify;
+exports.createDownloads = createDownloads;
 
