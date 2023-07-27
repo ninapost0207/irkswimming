@@ -86,9 +86,14 @@ footer {
             padding-bottom: 5px;
             max-width: 80%; 
             margin-top: 20px;
-            
+            font-size: 15px;
+            @include respond-to(lg) {
+               
+                font-size: 18px;
+            } 
             @include respond-to(md) {
                 margin-top: 0;
+                font-size: 20px;
             }           
         }
     }

@@ -3,7 +3,6 @@ const newsList = require('./src/data/news')
 const downloadsList = require('./src/data/downloads')
 //const newsGenerator = require('./src/processors/newsGenerator')
 var Twig = require('twig') // Twig module
-
 const { src, dest, parallel, watch, series } = require('gulp'),
 clean           = require('gulp-clean'),
 twig            = require('gulp-twig'),
@@ -19,11 +18,12 @@ reload          = browsersync.reload,
 ts              = require('gulp-typescript')
 
 
-
 function clear() {
     return src('build', {read: false, allowEmpty: true})
         .pipe(clean({force: true}));
 }
+
+
 
 
 function compileTwig() { //compile twig files
@@ -173,7 +173,6 @@ function createDownloads(cb) { //creating all news preview page with all news fr
     downloadsCreator({downloads: downloadsList, cb})
     return 
 }
-
 
 
 

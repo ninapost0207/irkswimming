@@ -9,9 +9,9 @@
 {% block content %}
 	<section class="content">
 		<div class="news-page__background">
-			<h1>Новости</h1>
-			<h3>Следите за нашими новостями,
-				<br>акциями и соревнованиями</h3>
+			<h1>News</h1>
+			<h3>Stay updated with our latest news,
+				<br>promotions, and competitions</h3>
 
 			<div class="news-page__cards__container container">
 				{% for newsItem in news %}
@@ -23,13 +23,14 @@
 								<p class="news-page__cards__container__item__date">{{ newsItem.date }}</p>
 								<p>{{ newsItem.description }}</p>
 							</div>
-							<span class="text-underlined">Подробнее...</span>
+							<span class="text-underlined">Read More...</span>
 						</a>
 					</div>
 				{% endfor %}
 			</div>
 		</div>
 	</section>
+
 {% endblock %}
 
 {% block footer %}

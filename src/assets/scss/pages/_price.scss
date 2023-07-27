@@ -9,6 +9,7 @@
         height: fit-content;
         padding: 30px 10px;
         
+        
 
         @include respond-to(xs) {
             padding-top: 50px;
@@ -24,31 +25,33 @@
         }
         
         
-
         & .container {
             margin-left: auto;
-            margin-right: auto;
-            
-
-            & h1 {
-                font-family: "Mulish-800";
-                font-size: clamp(2.25rem, 2.75vw, 5rem); 
-                text-align: center;
-                padding: 0px 20px;
-                text-shadow: $grey-shadow-big-bright;                 
-                color: $white;
-            }
-            & h3 {
-                font-family: "Mulish-800";
-                font-size: clamp(1.5rem, 2.25vw, 4rem); 
-                text-align: center;
-                color: $white;
-                text-shadow: rgba(0, 0, 0, 0.8) 0px 3px 10px;                 
-                padding: 20px;        
-                margin-left: auto;
-                margin-right: auto;
-            }
+            margin-right: auto;           
         }        
+    }
+    &__header-wrapper {
+        background-color: $blue;
+        border-radius: 5px;
+        padding: 10px;
+        & h1 {
+            font-family: "Mulish-800";
+            font-size: clamp(2.25rem, 2.75vw, 5rem); 
+            text-align: center;
+            padding: 0px 20px;
+            text-shadow: $grey-shadow-big-bright;                 
+            color: $white;
+        }
+        & h3 {
+            font-family: "Mulish-800";
+            font-size: clamp(1.5rem, 2.25vw, 4rem); 
+            text-align: center;
+            color: $white;
+            text-shadow: rgba(0, 0, 0, 0.8) 0px 3px 10px;                 
+            padding: 20px;        
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
     &__container {
         display: grid;

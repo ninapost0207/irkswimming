@@ -22,21 +22,22 @@
 {% endblock %}
 
 {% block content %}
+
 	<section class="content">
 		<div class="contacts-page__background">
 			<div class="contacts-page__container container">
 				<form id="form-submit">
-					<h2>Оставить заявку</h2>
-					<label for="name">Ваше имя*</label>
+					<h2>Leave a Request</h2>
+					<label for="name">Your Name*</label>
 					<input type="text" id="name" autocomplete="name" required/>
-					<label for="phone">Номер телефона*</label>
+					<label for="phone">Phone Number*</label>
 					<input type="tel" id="phone" name="phone" pattern="[0-9]{11}" autocomplete="phone" required/>
-					<label for="info">Дополнительная информация</label>
+					<label for="info">Additional Information</label>
 					<textarea name="info" id="info" rows="8" cols="50" autocomplete="off"></textarea>
-					<button type="submit">Отправить</button>
+					<button type="submit">Send</button>
 				</form>
 				<div class="contacts-page__contacts">
-					<p>Телефон, электронная почта:</p>
+					<p>Phone, Email:</p>
 					<div class="contacts-page__contacts__item">
 						<a href="tel:+7111111111111">
 							<div class="row align-center">
@@ -52,16 +53,16 @@
 							</div>
 						</a>
 					</div>
-					<p>Адрес:</p>
+					<p>Address:</p>
 					<div class="contacts-page__contacts__item">
 						<a href="https://go.2gis.com/akm0i" target="_blank">
 							<div class="row align-center">
 								<img src="../../assets/images/icons/location3_icon.svg" alt="address" class="contacts-page__contacts__item__icon">
-								<div class="contacts-page__contacts__item_right text-underlined">664050, Иркутская область, г.Иркутск, ул.Байкальская, 253/1</div>
+								<div class="contacts-page__contacts__item_right text-underlined">664050, Irkutsk Region, Irkutsk, Baikalskaya Street, 253/1</div>
 							</div>
 						</a>
 					</div>
-					<p>Мы в социальных сетях:</p>
+					<p>We are on social media:</p>
 					<div class="contacts-page__contacts__item">
 						<div class="row social-icons__block">
 							{% for icon in contacts_icons %}
@@ -70,16 +71,17 @@
 								</a>
 							{% endfor %}
 						</div>
-
 					</div>
 				</div>
 			</div>
 			<div class="modal">
-				<h3>Ваша заявка отправлена</h3>
-				<p>Наш администратор свяжется с Вами в ближайшее время</p>
+				<h3>Your request has been submitted</h3>
+				<p>Our administrator will contact you shortly</p>
 			</div>
 		</div>
 	</section>
+
+
 {% endblock %}
 
 {% block footer %}

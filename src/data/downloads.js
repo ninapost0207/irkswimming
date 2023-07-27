@@ -1,89 +1,107 @@
 const downloadsList = [
-    {  
-        header: "Документы организации",
+    {
+        header: "Organization Documents",
         img: "../../assets/images/woman1.jpg",
-        docs: [{
-            _id: "a1",
-            header: "Устав ФПИО Байкал",
-            url: "../../assets/documents/docs/Устав_ФПИО_Байкал.PDF",
-	    	download: "Устав_ФПИО_Байкал.PDF"        
-        }, {
-            _id: "a2",
-            header: "Свидетельство о регистрации ФПИО Байкал",
-            url: "../../assets/documents/docs/Св-во_о_регистрации_ФПИО_Байкал.pdf",
-	    	download: "Св-во_о_регистрации_ФПИО_Байкал.pdf"        
-        }, {
-            _id: "a3",
-            header: "Акредитация Минспорта ИО ФПИО Байкал",
-            url: "../../assets/documents/docs/Акредитация_минспорта_ИО_ФПИО_Байкал.pdf",
-	    	download: "Акредитация_минспорта_ИО_ФПИО_Байкал.pdf"        
-        }]
-    },
-    {  
-        header: "Новые Cоревнования",
-        img: "../../assets/images/swimming.jpg",
-        docs: [{
-            _id: "b1",
-            header: "Кубок ИО 11-12.05.23 Стартовый 1 день",
-            url: "../../assets/documents/competitions/Кубок_ИО_11-12.05.23_Стартовый_1_день.pdf",
-	    	download: "Кубок_ИО_11-12.05.23_Стартовый_1_день.pdf"
-        }, {
-            _id: "b2",
-            header: "Кубок ИО Итог 1 день",
-            url: "../../assets/documents/competitions/Итог_1_день.pdf",
-	    	download: "Итог_1_день.pdf"
-        }, {
-            _id: "b3",
-            header: "Кубок ИО Стартовый 2 день",
-            url: "../../assets/documents/competitions/Стартовый_2_день.pdf",
-	    	download: "Стартовый_2_день.pdf"
-        }, {
-            _id: "b4",
-            header: "Кубок ИО ИТОГ ОБЩИЙ",
-            url: "../../assets/documents/competitions/ИТОГ_ОБЩИЙ.pdf",
-	    	download: "ИТОГ_ОБЩИЙ.pdf"
-        }, {
-            _id: "b5",
-            header: "Cоревнования памяти Марии Цукановой",
-            url: "../../assets/documents/competitions/Стартовый_протокол_Цуканова.docx",
-	    	download: "Стартовый_протокол_Цуканова.docx"
-        }, {
-            _id: "b6",
-            header: "Итог 1 день Cоревнований памяти Марии Цукановой",
-            url: "../../assets/documents/competitions/итог_1_день.docx",
-	    	download: "итог_1_день.docx"
-        }, {
-            _id: "b7",
-            header: "Итоговый протокол coревнований памяти Марии Цукановой",
-            url: "../../assets/documents/competitions/Итоговый_протокол_Цуканова 2023.docx",
-	    	download: "Итоговый_протокол_Цуканова 2023.docx"
-        }]
+        docs: [
+            {
+                _id: "a1",
+                header: "Charter of FPIO Baikal",
+                url: "../../assets/documents/docs/Charter_FPIO_Baikal.PDF",
+                download: "Charter_FPIO_Baikal.PDF"
+            },
+            {
+                _id: "a2",
+                header: "Certificate of Registration of FPIO Baikal",
+                url: "../../assets/documents/docs/Certificate_of_Registration_FPIO_Baikal.pdf",
+                download: "Certificate_of_Registration_FPIO_Baikal.pdf"
+            },
+            {
+                _id: "a3",
+                header: "Accreditation from the Ministry of Sports of Irkutsk Region for FPIO Baikal",
+                url: "../../assets/documents/docs/Accreditation_Ministry_of_Sports_FPIO_Baikal.pdf",
+                download: "Accreditation_Ministry_of_Sports_FPIO_Baikal.pdf"
+            }
+        ]
     },
     {
-        header: "Архив соревнований",   
-        img: "../../assets/images/ontheback.jpg", 
-	    docs: [{
-            _id: "c1",
-	    	header: "Регламент КС 12.2022 Иркутск",
-            url: "../../assets/documents/competitions/Регламент_КС_12.2022_Иркутск.pdf",
-	    	download: "Регламент_КС_12.2022_Иркутск.pdf"
-	    }, {
-            _id: "c2",
-	    	header: "Стартовый 1 день",
-            url: "../../assets/documents/competitions/Стартовый_1_день.pdf",
-	    	download: "Стартовый_1_день.pdf"
-	    }, {
-            _id: "c3",
-	    	header: "Кубок Попова стартовый 1 день",
-            url: "../../assets/documents/competitions/Кубок_Попова_стартовый_1_день.pdf",
-	    	download: "Кубок_Попова_стартовый_1_день.pdf"
-	    }, {
-            _id: "c4",
-	    	header: "Кубок Попова стартовый 2 день",
-            url: "../../assets/documents/competitions/Кубок_Попова_стартовый_2_день.pdf",
-	    	download: "Кубок_Попова_стартовый_2_день.pdf"
-	    }]
+        header: "Recent Competitions",
+        img: "../../assets/images/swimming.jpg",
+        docs: [
+            {
+                _id: "b1",
+                header: "Cup of Irkutsk Region 11-12.05.23 Day 1",
+                url: "../../assets/documents/competitions/Cup_of_Irkutsk_Region_11-12.05.23_Day_1.pdf",
+                download: "Cup_of_Irkutsk_Region_11-12.05.23_Day_1.pdf"
+            },
+            {
+                _id: "b2",
+                header: "Cup of Irkutsk Region Day 1 Results",
+                url: "../../assets/documents/competitions/Irkutsk_Region_Cup_Day_1_Results.pdf",
+                download: "Irkutsk_Region_Cup_Day_1_Results.pdf"
+            },
+            {
+                _id: "b3",
+                header: "Cup of Irkutsk Region Start Day 2",
+                url: "../../assets/documents/competitions/Irkutsk_Region_Cup_Start_Day_2.pdf",
+                download: "Irkutsk_Region_Cup_Start_Day_2.pdf"
+            },
+            {
+                _id: "b4",
+                header: "Cup of Irkutsk Region Overall Results",
+                url: "../../assets/documents/competitions/Irkutsk_Region_Cup_Overall_Results.pdf",
+                download: "Irkutsk_Region_Cup_Overall_Results.pdf"
+            },
+            {
+                _id: "b5",
+                header: "Competition in Memory of Maria Tsukanova Start Protocol",
+                url: "../../assets/documents/competitions/Start_Protocol_Tsukanova.docx",
+                download: "Start_Protocol_Tsukanova.docx"
+            },
+            {
+                _id: "b6",
+                header: "Competition in Memory of Maria Tsukanova Day 1 Results",
+                url: "../../assets/documents/competitions/Day_1_Results_Tsukanova.docx",
+                download: "Day_1_Results_Tsukanova.docx"
+            },
+            {
+                _id: "b7",
+                header: "Final Protocol of the Competition in Memory of Maria Tsukanova",
+                url: "../../assets/documents/competitions/Final_Protocol_Tsukanova_2023.docx",
+                download: "Final_Protocol_Tsukanova_2023.docx"
+            }
+        ]
+    },
+    {
+        header: "Competitions Archive",
+        img: "../../assets/images/ontheback.jpg",
+        docs: [
+            {
+                _id: "c1",
+                header: "Regulation of the Swimming Championship 12.2022 Irkutsk",
+                url: "../../assets/documents/competitions/Swimming_Championship_Regulation_12.2022_Irkutsk.pdf",
+                download: "Swimming_Championship_Regulation_12.2022_Irkutsk.pdf"
+            },
+            {
+                _id: "c2",
+                header: "Start Day 1",
+                url: "../../assets/documents/competitions/Start_Day_1.pdf",
+                download: "Start_Day_1.pdf"
+            },
+            {
+                _id: "c3",
+                header: "Cup Popova Start Day 1",
+                url: "../../assets/documents/competitions/Cup_Popova_Start_Day_1.pdf",
+                download: "Cup_Popova_Start_Day_1.pdf"
+            },
+            {
+                _id: "c4",
+                header: "Cup Popova Start Day 2",
+                url: "../../assets/documents/competitions/Cup_Popova_Start_Day_2.pdf",
+                download: "Cup_Popova_Start_Day_2.pdf"
+            }
+        ]
     }
-]
+];
 
-module.exports = downloadsList
+module.exports = downloadsList;
+

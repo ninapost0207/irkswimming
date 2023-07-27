@@ -1,7 +1,9 @@
 "use strict";
 import modal from './modal.js';
 
+
 function submitForm() {
+      
     const _form = document.querySelector('#form-submit');
     
     _form?.addEventListener('submit', (e) => {

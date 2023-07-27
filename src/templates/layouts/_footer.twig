@@ -3,21 +3,20 @@
 		url: "https://go.2gis.com/akm0i",
 		img_url: "../../assets/images/icons/location1_icon.svg",
 		img_alt: "address",
-		text: "664050, Иркутская область, г.Иркутск, ул.Байкальская, 253/1"
+		text: "664050, Irkutsk Region, Irkutsk, ul. Baikalskaya, 253/1"
 	}, {
-	
 		url: "tel:+7111111111111",
 		img_url: "../../assets/images/icons/phone_icon.svg",
 		img_alt: "phone",
 		text: "+7 111111111111"
 	}, {
-	
 		url: "mailto:email_address@gmail.com",
 		img_url: "../../assets/images/icons/envelope_mail_icon.svg",
 		img_alt: "email",
 		text: "email_address@gmail.com"
 	}
 ]%}
+
 {% set footer_icons = [
 	{
 		url: "https://instagram.com/swimming.irkutsk?igshid=NTc4MTIwNjQ2YQ==",
@@ -33,11 +32,12 @@
 		img_alt: "vkontakte"
 	}
 ] %}
+
 <footer>
 	<div class="footer__menu container">
 		<div class="footer__menu_left-block">
-			<h6>Федерация плавания Иркутской области «Байкал»</h6>
-			<p>Мы воспитываем в детях стремление к победе, дисциплину, выносливость и спортивный дух.
+			<h6>Federation of Swimming of Irkutsk Region "Baikal"</h6>
+			<p>We instill in children the desire to win, discipline, endurance, and a sports spirit.
 			</p>
 		</div>
 		<div class="footer__line"></div>
@@ -45,8 +45,8 @@
 			{% for contact in footer_contacts %}
 				<a href="{{ contact.url }}" target="_blank">
 					<div class="row footer__contacts__block">
-						<img src="{{ contact.img_url }}" alt="{{ contact.img_alt}}" class="footer__icon">
-						<div class="footer__contacts__block__text text-underlined">{{ contact.text }}</div>
+						<img src="{{ contact.img_url }}" alt="{{ contact.img_alt }}" class="footer__icon">
+						<p class="footer__contacts__block__text text-underlined">{{ contact.text }}</p>
 					</div>
 				</a>
 			{% endfor %}
@@ -55,11 +55,11 @@
 
 	<div class="footer__rights">
 		<div class="footer__rights__container row container">
-			Федерация плавания Иркутской области<br>Copyright © 2023 Все права защищены
+			Federation of Swimming of Irkutsk Region<br>Copyright © 2023 All rights reserved
 			<div class="row">
 				{% for icon in footer_icons %}
 					<a href="{{ icon.url }}" target="_blank">
-						<img src="{{ icon.img_url }}" class="footer__rights__icon " alt="{{ icon.img_alt }}">
+						<img src="{{ icon.img_url }}" class="footer__rights__icon" alt="{{ icon.img_alt }}">
 					</a>
 				{% endfor %}
 			</div>

@@ -186,13 +186,11 @@ li {
             & p {
                 color: $light-light-blue;  
             }
-            & button {
+            & a {
                 background: linear-gradient(to bottom, $dark-dark-blue, $dark-blue);
                 border: 2px solid $blue;   
+                color: $light-light-blue;
                 
-                & a {
-                    color: $light-light-blue;
-                }
             }
         }
     }
@@ -262,7 +260,9 @@ li {
         &__background {
             background: url("../images/competition.jpg");
         }
-        
+        &__header-wrapper {
+            background-color: $dark-dark-blue;
+        }
         &__container {            
             &__item {
                 background: $dark-dark-blue;

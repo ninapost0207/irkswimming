@@ -3,22 +3,22 @@
 
 {% set prices = [
 	{
-		header: "Абонемент месячный одно занятие в неделю",		
-		lessons_per_week: 'Одно занятие в неделю',
+		header: "Monthly Subscription - One Lesson per Week",
+		lessons_per_week: 'One lesson per week',
 		lessons_per_month: 4,
-		price: "2 200"
+		price: "2.200"
 	}, {
-		header: "Абонемент месячный два занятия в неделю",		
-		lessons_per_week: "Два занятия в неделю",
+		header: "Monthly Subscription - Two Lessons per Week",
+		lessons_per_week: "Two lessons per week",
 		lessons_per_month: 8,
-		price: "4 000"
+		price: "4.000"
 	}, {
-		header: "Абонемент месячный три занятия в неделю",		
-		lessons_per_week: "Tри занятия в неделю",
+		header: "Monthly Subscription - Three Lessons per Week",
+		lessons_per_week: "Three lessons per week",
 		lessons_per_month: 12,
-		price: "5 400"
+		price: "5.400"
 	}
-]%}
+] %}
 
 {% block header %}
 	{% include '../layouts/_header.twig' %}
@@ -27,26 +27,26 @@
 {% block content %}
 	<section class="content">
 		<div class="price-page__background">
-			<div class="container">
-				<h1>Стоимость занятий</h1>
-				<h3>Выберите свой абонемент и запишитесь на первую тренировку</h3>
+			<div class="container price-page__header-wrapper">
+				<h1>Prices</h1>
+				<h3>Choose your subscription and sign up for the first training session</h3>
 			</div>
 
 			<div class="price-page__container container">
 				{% for price in prices %}
-					<a href="/contacts.html" class=" transition price-page__container__item">
+					<a href="/contacts.html" class="transition price-page__container__item">
 						<h4>{{ price.header }}</h4>
 						<p>{{ price.lessons_per_month }}
-							групповых занятий в среднем в месяц</p>
+							group lessons on average per month</p>
 						<h2>{{ price.price }}
-							руб.</h2>
+							RUB</h2>
 						<ul>
 							<li>{{ price.lessons_per_week }}</li>
-							<li>Групповые тренировки</li>
-							<li>Знакомство с тренером</li>
-							<li>Консультация</li>
+							<li>Group training</li>
+							<li>Introduction to the coach</li>
+							<li>Consultation</li>
 						</ul>
-						<button>Записаться</button>
+						<button>Sign Up</button>
 					</a>
 				{% endfor %}
 			</div>

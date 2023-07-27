@@ -1,6 +1,6 @@
 .theme-switcher__container {
     position: fixed;
-    top: 10px;
+    top: 7px;
     right: 20px;
     z-index: 5000;
 
@@ -16,7 +16,7 @@
     
 
     @include respond-to(lg) {
-        top: 20px;
+        top: 10px;
     }
 
     & label {

@@ -70,7 +70,7 @@
             }     
             
         }
-        & button {
+        & a {
             background: linear-gradient(to bottom, $white, $light-light-blue, $light-blue);
             color: $grey;
             text-align: center;
@@ -80,6 +80,10 @@
             box-shadow: $grey-shadow-big; 
             border: 2px solid $light-blue;   
             letter-spacing: 1px;
+            color: $grey;
+            border: none;
+            padding: 20px 30px;
+            border-radius: 5px;
             @include respond-to(md) {
                 margin-top: 20px; 
             } 
@@ -88,9 +92,7 @@
             &:hover {
                 box-shadow: $grey-shadow-big-bright; 
             }
-            & a {
-                color: $grey;
-            }
+            
         }
     }    
 }
