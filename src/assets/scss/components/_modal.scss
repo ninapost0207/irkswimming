@@ -1,12 +1,18 @@
 .modal {
-    transform: scale(0);           
+    transform: scale(0);
     transition: transform 0.5s 0s ease-in-out;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+
     &.opened {
-        transform: scale(1);        
-        transition: transform 0.5s 0s ease-in-out;      
+        transform: scale(1);
+        transition: transform 0.5s 0s ease-in-out;
         display: flex;
         flex-direction: column;
-        justify-content: center;    
+        justify-content: center;
         gap: 0.4rem;
         width: 35%;
         padding: 1.3rem;
@@ -17,13 +23,13 @@
         background-color: white;
         border: 1px solid #ddd;
         border-radius: 15px;
-        z-index: 2;  
-        
+        z-index: 2;
+
     }
 
-    & h3 {
+    & h1 {
         font-family: "Mulish-700";
-        font-size: 1.75rem;    
+        font-size: 1.75rem;
         color: $grey;
         text-shadow: rgba(0, 153, 255, 0.5) 0px 2px 5px;
         letter-spacing: 0.5px;
@@ -38,7 +44,5 @@
         color: $grey;
         text-align: center;
     }
-    
+
 }
-
-

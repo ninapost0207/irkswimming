@@ -1,60 +1,69 @@
 footer {
-    background-color: $light-blue;   
+    background-color: $light-blue;
     padding: 0;
 
-    
+
     & .footer__menu {
         font-family: "Mulish-500";
-        font-size: 18px;        
+        font-size: 18px;
         color: $grey;
-        text-shadow: rgba(124, 124, 124, 0.1) 0px 3px 3px;
         letter-spacing: 1px;
         padding-left: 0;
-        margin: 0px auto; 
+        margin: 0px auto;
         padding-top: 30px;
         padding-bottom: 30px;
         width: min(80%, 1500px);
 
-        
+
 
         @include respond-to(md) {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
-            font-size: 17px; 
+            font-size: 17px;
         }
-        
-        &_left-block {
-            & h6 {
-                font-size: 22px;  
-                padding-bottom: 10px;   
 
-                
+        &_left-block {
+            & h1 {
+                font-size: 22px;
+                padding-bottom: 10px;
+
                 @include respond-to(md) {
-                    font-size: 20px; 
+                    font-size: 20px;
                 }
             }
+
             & p {
                 padding: 20px 0px;
                 display: none;
+                font-size: 15px;
+
+                @include respond-to(lg) {
+                    font-size: 18px;
+                }
+
                 @include respond-to(xs) {
                     display: block;
                 }
             }
+
             @include respond-to(md) {
                 width: 45%;
             }
         }
+
         &_right-block {
             @include respond-to(md) {
                 width: 50%;
             }
+
             @include respond-to(lg) {
                 width: 40%;
             }
         }
     }
+
     & .footer__line {
         width: 100%;
         height: 1px;
@@ -66,60 +75,65 @@ footer {
             display: none;
         }
     }
+
     & a {
         color: $grey;
         padding-bottom: 5px;
-        text-decoration: none;      
+        text-decoration: none;
 
-        &::before{
+        &::before {
             left: 0;
-            transform: translateX(0); 
+            transform: translateX(0);
         }
     }
+
     & .footer__contacts__block {
-        
+
         @include respond-to(md) {
             margin-top: 30px;
-        }   
-        
+        }
+
         &__text {
             padding-bottom: 5px;
-            max-width: 80%; 
+            max-width: 80%;
             margin-top: 20px;
             font-size: 15px;
+
             @include respond-to(lg) {
-               
                 font-size: 18px;
-            } 
+            }
+
             @include respond-to(md) {
                 margin-top: 0;
-                font-size: 20px;
-            }           
+            }
         }
     }
-    
+
     & .footer__icon {
-        display: block; 
+        display: block;
         width: 25px;
-        height: 25px; 
-        margin-top: 20px;  
+        height: 25px;
+        margin-top: 20px;
         width: 50px;
         height: 50px;
         padding: 10px;
         border-radius: 50%;
         margin-right: 15px;
-        background: linear-gradient(to bottom, $white, $light-light-blue, $light-blue);          
+        background: linear-gradient(to bottom, $white, $light-light-blue);
         opacity: 0.8;
+        //background: linear-gradient(to bottom, $light-blue, $blue, $dark-blue);
 
-        
+
         @include respond-to(sm) {
             width: 40px;
             height: 40px;
             padding: 8px;
         }
+
         @include respond-to(md) {
             margin-top: 0;
-        }   
+        }
+
         @include respond-to(lg) {
             margin-right: 20px;
             padding: 10px;
@@ -127,48 +141,52 @@ footer {
             height: 50px;
         }
     }
-    
-    
+
+
     & .footer__rights {
         color: $white;
         font-family: "Mulish-500";
         font-size: 12px;
         padding: 10px;
-        width: 100%;        
+        width: 100%;
         background-color: $blue;
         text-align: center;
-        @include respond-to(xs) {                               
+
+        @include respond-to(xs) {
             text-align: start;
             padding: 5px;
         }
-        
+
         &__container {
             width: min(80%, 1500px);
             margin-left: auto;
             margin-right: auto;
             display: flex;
             flex-direction: column-reverse;
-            justify-content: space-between; 
+            justify-content: space-between;
             align-items: center;
 
-            @include respond-to(xs) {                               
+            @include respond-to(xs) {
                 flex-direction: row;
             }
-            & > .row {
+
+            &>.row {
                 justify-content: center;
                 margin-bottom: 10px;
 
-                @include respond-to(xs) {                               
+                @include respond-to(xs) {
                     margin-bottom: 0px;
                 }
             }
         }
-        &__icon {    
+
+        &__icon {
             width: 60px;
             height: 60px;
             margin-left: 20px;
             margin-right: 20px;
             padding-top: 5px;
+
             @include respond-to(xs) {
                 margin-left: 10px;
                 margin-right: 10px;
@@ -182,4 +200,3 @@ footer {
         }
     }
 }
-

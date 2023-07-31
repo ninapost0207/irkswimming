@@ -29,17 +29,17 @@
 		<div class="price-page__background">
 			<div class="container price-page__header-wrapper">
 				<h1>Prices</h1>
-				<h3>Choose your subscription and sign up for the first training session</h3>
+				<h2>Choose your subscription and sign up for the first training session</h2>
 			</div>
 
 			<div class="price-page__container container">
 				{% for price in prices %}
 					<a href="/contacts.html" class="transition price-page__container__item">
-						<h4>{{ price.header }}</h4>
+						<h3>{{ price.header }}</h3>
 						<p>{{ price.lessons_per_month }}
 							group lessons on average per month</p>
-						<h2>{{ price.price }}
-							RUB</h2>
+						<h4>{{ price.price }}
+							RUB</h4>
 						<ul>
 							<li>{{ price.lessons_per_week }}</li>
 							<li>Group training</li>

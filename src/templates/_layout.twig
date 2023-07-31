@@ -4,17 +4,20 @@
 		<meta charset="utf-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<meta name="description" content="Author: Nina Postnikova"/>
 		<link rel="stylesheet" href="/assets/css/main.css">
 		<script type='module' defer src="/assets/js/common.js"></script>
 		<title>{{ pageTitle }}</title>
+		<meta charset="utf-8"/>
+
 
 	</head>
 	<body>
 		<div id="root">
-			<div class="theme-switcher__container">
-				<label for="theme-switcher">
-					<input type="checkbox" id="theme-switcher">
-				</label>
+			<div class="theme-switcher__container" tabindex='0'>
+				<label for="themeswitcher"></label>
+				<input type="checkbox" id="themeswitcher" name="themeSwitch" area-label="Change site theme"/>
+
 			</div>
 			<div class="overlay"></div>
 			{% block header %}{% endblock header %}

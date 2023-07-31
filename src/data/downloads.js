@@ -1,6 +1,6 @@
 const downloadsList = [
     {
-        header: "Organization Documents",
+        header: "Documents",
         img: "../../assets/images/woman1.jpg",
         docs: [
             {
@@ -24,7 +24,7 @@ const downloadsList = [
         ]
     },
     {
-        header: "Recent Competitions",
+        header: "Competitions",
         img: "../../assets/images/swimming.jpg",
         docs: [
             {
@@ -72,7 +72,7 @@ const downloadsList = [
         ]
     },
     {
-        header: "Competitions Archive",
+        header: "Archive",
         img: "../../assets/images/ontheback.jpg",
         docs: [
             {

@@ -39,26 +39,26 @@
 				<div class="contacts-page__contacts">
 					<p>Phone, Email:</p>
 					<div class="contacts-page__contacts__item">
-						<a href="tel:+7111111111111">
+						<a href="tel:+7111111111111" target="_blank" area-label="phone">
 							<div class="row align-center">
 								<img src="../../assets/images/icons/phone3_icon.svg" alt="phone" class="contacts-page__contacts__item__icon">
-								<div class="contacts-page__contacts__item_right text-underlined">+7 111111111111</div>
+								<p class="contacts-page__contacts__item_right text-underlined">+7 111111111111</p>
 							</div>
 						</a>
 
-						<a href="mailto:email_address@gmail.com" target="_blank">
+						<a href="mailto:email_address@gmail.com" target="_blank" area-label="email">
 							<div class="row align-center">
 								<img src="../../assets/images/icons/email1_icon.svg" alt="email" class="contacts-page__contacts__item__icon">
-								<div class="contacts-page__contacts__item_right text-underlined">email_address@gmail.com</div>
+								<p class="contacts-page__contacts__item_right text-underlined">email_address@gmail.com</p>
 							</div>
 						</a>
 					</div>
 					<p>Address:</p>
 					<div class="contacts-page__contacts__item">
-						<a href="https://go.2gis.com/akm0i" target="_blank">
+						<a href="https://go.2gis.com/akm0i" target="_blank" area-label="address">
 							<div class="row align-center">
 								<img src="../../assets/images/icons/location3_icon.svg" alt="address" class="contacts-page__contacts__item__icon">
-								<div class="contacts-page__contacts__item_right text-underlined">664050, Irkutsk Region, Irkutsk, Baikalskaya Street, 253/1</div>
+								<p class="contacts-page__contacts__item_right text-underlined">664050, Irkutsk Region, Irkutsk, Baikalskaya Street, 253/1</p>
 							</div>
 						</a>
 					</div>
@@ -66,7 +66,7 @@
 					<div class="contacts-page__contacts__item">
 						<div class="row social-icons__block">
 							{% for icon in contacts_icons %}
-								<a href="{{ icon.url }}" target="_blank">
+								<a href="{{ icon.url }}" target="_blank" area-label="{{ icon.img_alt}}">
 									<img src="{{ icon.img_url }}" alt="{{ icon.img_alt}}">
 								</a>
 							{% endfor %}
@@ -75,7 +75,7 @@
 				</div>
 			</div>
 			<div class="modal">
-				<h3>Your request has been submitted</h3>
+				<h1>Your request has been submitted</h1>
 				<p>Our administrator will contact you shortly</p>
 			</div>
 		</div>

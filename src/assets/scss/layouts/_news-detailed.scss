@@ -3,38 +3,43 @@
         display: none;
         border: 3px solid red;
     }
-    &__background {        
-        width: 100%;        
+
+    &__background {
+        width: 100%;
         background-image: url('../images/splashes.jpg');
-        background-size: cover;    
-        position: relative;  
+        background-size: cover;
+        position: relative;
         height: fit-content;
         padding: 30px 10px;
-        
+
         @include respond-to(xs) {
             padding-top: 50px;
-            padding-bottom: 50px; 
+            padding-bottom: 50px;
         }
+
         @include respond-to(sm) {
             padding-top: 60px;
-            padding-bottom: 60px; 
+            padding-bottom: 60px;
         }
+
         @include respond-to(md) {
             padding-top: 70px;
-            padding-bottom: 70px; 
+            padding-bottom: 70px;
         }
+
         @include respond-to(lg) {
             padding-top: 100px;
-            padding-bottom: 100px; 
+            padding-bottom: 100px;
         }
     }
+
     &__container {
-        background-color: $light-light-blue;  
-        position: relative;        
+        background-color: $light-light-blue;
+        position: relative;
         height: fit-content;
         margin: auto;
         padding: 50px;
-        border-radius: 5px; 
+        border-radius: 5px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -44,7 +49,7 @@
 
         & h1 {
             font-family: "Mulish-800";
-            font-size: clamp(1.75rem, 2.5vw, 5rem); 
+            font-size: clamp(1.75rem, 2.5vw, 5rem);
             text-align: center;
             padding-top: 0px;
             text-shadow: $blue-shadow;
@@ -54,57 +59,91 @@
             margin-left: auto;
             margin-right: auto;
             text-transform: uppercase;
+
             @include respond-to(md) {
                 padding-top: 20px;
             }
         }
+
         & h3 {
             font-family: "Mulish-800";
-            font-size: clamp(1.5rem, 2vw, 4rem); 
+            font-size: clamp(1.5rem, 2vw, 4rem);
             text-align: center;
-            color: $dark-blue;            
+            color: $dark-blue;
             letter-spacing: 0.5px;
             margin-left: auto;
             margin-right: auto;
             padding-top: 0px;
             width: min(800px, 90%);
         }
+
         & img {
             display: block;
-            width: 100%;    
+            width: 100%;
             height: 250px;
             object-fit: cover;
             box-shadow: $blue-shadow;
             border-radius: 5px;
             margin-bottom: 20px;
+
             @include respond-to(md) {
                 width: 70%;
             }
         }
+
         & p {
             font-family: 'Play-400';
             font-size: 18px;
             color: $dark-dark-blue;
-            text-indent: 50px; 
+            text-indent: 50px;
             padding-bottom: 20px;
             text-align: justify;
+
             @include respond-to(md) {
                 font-size: 20px;
             }
         }
+
+        ul {
+            font-family: 'Play-400';
+            font-size: 18px;
+            color: $dark-dark-blue;
+            text-indent: 50px;
+            padding-bottom: 20px;
+
+
+            @include respond-to(md) {
+                font-size: 20px;
+            }
+
+            li {
+                font-family: 'Play-400';
+                font-size: 18px;
+                color: $dark-dark-blue;
+                text-indent: 50px;
+                padding-bottom: 20px;
+
+
+                @include respond-to(md) {
+                    font-size: 20px;
+                }
+            }
+        }
+
         & a {
-            text-decoration: none;   
-            text-transform: uppercase;                 
+            text-decoration: none;
+            text-transform: uppercase;
             padding: 0px;
             margin-bottom: 0px;
             font-family: 'Play-700';
             font-size: 18px;
-            color: $dark-dark-blue;   
-            padding-bottom: 5px;    
-            margin-top: 30px;     
-        }   
-        & ol {
-            padding: 0px;            
+            color: $dark-dark-blue;
+            padding-bottom: 5px;
+            margin-top: 30px;
         }
-    }   
+
+        & ol {
+            padding: 0px;
+        }
+    }
 }

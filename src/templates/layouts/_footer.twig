@@ -36,14 +36,14 @@
 <footer>
 	<div class="footer__menu container">
 		<div class="footer__menu_left-block">
-			<h6>Federation of Swimming of Irkutsk Region "Baikal"</h6>
+			<h1>Federation of Swimming of Irkutsk Region "Baikal"</h1>
 			<p>We instill in children the desire to win, discipline, endurance, and a sports spirit.
 			</p>
 		</div>
 		<div class="footer__line"></div>
 		<div class="footer__menu_right-block">
 			{% for contact in footer_contacts %}
-				<a href="{{ contact.url }}" target="_blank">
+				<a href="{{ contact.url }}" target="_blank" area-label="{{ contact.img_alt }}">
 					<div class="row footer__contacts__block">
 						<img src="{{ contact.img_url }}" alt="{{ contact.img_alt }}" class="footer__icon">
 						<p class="footer__contacts__block__text text-underlined">{{ contact.text }}</p>
@@ -55,10 +55,10 @@
 
 	<div class="footer__rights">
 		<div class="footer__rights__container row container">
-			Federation of Swimming of Irkutsk Region<br>Copyright © 2023 All rights reserved
+			<p>Federation of Swimming of Irkutsk Region<br>Copyright © 2023 All rights reserved</p>
 			<div class="row">
 				{% for icon in footer_icons %}
-					<a href="{{ icon.url }}" target="_blank">
+					<a href="{{ icon.url }}" target="_blank" area-label="{{ icon.img_alt }}">
 						<img src="{{ icon.img_url }}" class="footer__rights__icon" alt="{{ icon.img_alt }}">
 					</a>
 				{% endfor %}

@@ -10,16 +10,16 @@
 	<section class="content">
 		<div class="news-page__background">
 			<h1>News</h1>
-			<h3>Stay updated with our latest news,
-				<br>promotions, and competitions</h3>
+			<h2>Stay updated with our latest news,
+				<br>promotions, and competitions</h2>
 
 			<div class="news-page__cards__container container">
 				{% for newsItem in news %}
 					<div class="news-page__cards__container__item">
-						<a href="./news/{{ newsItem._id }}.html" class="transition">
+						<a href="./news/{{ newsItem._id }}.html" class="transition" area-label="{{ newsItem.header }}">
 							<div>
 								<img src="{{ newsItem.url }}" alt="{{ newsItem.header }}">
-								<h6>{{ newsItem.header }}</h6>
+								<h3>{{ newsItem.header }}</h3>
 								<p class="news-page__cards__container__item__date">{{ newsItem.date }}</p>
 								<p>{{ newsItem.description }}</p>
 							</div>

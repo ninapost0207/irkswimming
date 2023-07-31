@@ -1,34 +1,37 @@
 .news-page {
     &__background {
-        background: linear-gradient(to bottom, $white, $light-blue, $blue);  
+        background: linear-gradient(to bottom, $white, $light-blue, $blue);
         background-repeat: repeat-y;
-        width: 100%;  
-        background-size: cover;    
-        position: relative;   
+        width: 100%;
+        background-size: cover;
+        position: relative;
         height: fit-content;
         padding: 30px 10px;
-        
+
         @include respond-to(xs) {
             padding-top: 50px;
-            padding-bottom: 50px; 
+            padding-bottom: 50px;
         }
+
         @include respond-to(sm) {
             padding-top: 60px;
-            padding-bottom: 60px; 
+            padding-bottom: 60px;
         }
+
         @include respond-to(md) {
             padding-top: 70px;
-            padding-bottom: 70px; 
+            padding-bottom: 70px;
         }
+
         @include respond-to(lg) {
             padding-top: 100px;
-            padding-bottom: 100px; 
+            padding-bottom: 100px;
         }
 
         & h1 {
             font-family: "Mulish-800";
-            font-size: clamp(2rem, 2.75vw, 5rem); 
-            text-align: center;            
+            font-size: clamp(2rem, 2.75vw, 5rem);
+            text-align: center;
             text-shadow: $blue-shadow;
             letter-spacing: 0.5px;
             color: $dark-blue;
@@ -37,12 +40,13 @@
             margin-right: auto;
             text-transform: uppercase;
         }
-        & h3 {
+
+        & h2 {
             font-family: "Mulish-800";
-            font-size: clamp(1.25rem, 2vw, 3rem); 
+            font-size: clamp(1.25rem, 2vw, 3rem);
             text-align: center;
             color: $dark-blue;
-            text-shadow: $blue-shadow; 
+            text-shadow: $blue-shadow;
             letter-spacing: 0.5px;
             margin-left: auto;
             margin-right: auto;
@@ -50,83 +54,89 @@
             width: min(800px, 80%);
         }
     }
+
     &__cards__container {
-            display: grid;
-            grid-template-rows: minmax(100px, 1fr);
-            grid-template-columns: 100%;
-            gap: 30px;
-            position: relative;
-            height: fit-content;   
-            margin: auto;            
-            margin-top: 50px;
+        display: grid;
+        grid-template-rows: minmax(100px, 1fr);
+        grid-template-columns: 100%;
+        gap: 30px;
+        position: relative;
+        height: fit-content;
+        margin: auto;
+        margin-top: 50px;
 
-            @include respond-to(md)  {
-                grid-template-columns: 49% 49%;
-                gap: 10px;
-            }
-            @include respond-to(lg)  {                
-                grid-template-columns: 47% 47%;
-                gap: 50px;
-            }
-    
-            &__item {
-                background: $white;
-                padding: 20px;
-                border-radius: 5px;
-                box-shadow: $grey-shadow-big;
+        @include respond-to(md) {
+            grid-template-columns: 49% 49%;
+            gap: 10px;
+        }
+
+        @include respond-to(lg) {
+            grid-template-columns: 47% 47%;
+            gap: 50px;
+        }
+
+        &__item {
+            background: $white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: $grey-shadow-big;
+            color: $grey;
+            min-height: max-content;
+
+
+            & a {
+                text-decoration: none;
+                padding: 0px;
+                margin-bottom: 0px;
+                font-family: 'Play-400';
+                font-size: 18px;
                 color: $grey;
-                min-height: max-content;
-                
-                
-                & a {
-                    text-decoration: none;                    
-                    padding: 0px;
-                    margin-bottom: 0px;
-                    font-family: 'Play-400';
-                    font-size: 18px;
-                    color: $grey;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-                    gap: 20px;
-                    height: 100%;
-                    
-                    
-                    & > span {
-                        padding-bottom: 5px;                                            
-                        font-family: 'Play-700';
-                    }
-                }
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: 20px;
+                height: 100%;
 
-                & img {
-                    display: block;
-                    width: 100%;    
-                    height: 150px;
-                    object-fit: cover;
-                    box-shadow: $blue-shadow;
-                    border-radius: 5px;
-                }
-                & h6 {
-                    font-family: 'Play-700';
-                    font-size: 20px;
-                    padding: 20px 0px;
-                }
-                & p {
-                    font-family: 'Play-400';
-                    font-size: 16px;
+
+                &>span {
                     padding-bottom: 5px;
-                    @include respond-to(sm) {
-                        font-size: 18px;
-                    }
+                    font-family: 'Play-700';
                 }
-                &__date {
-                    font-size: 14px !important;
-                    padding-top: 20px;                    
+            }
+
+            & img {
+                display: block;
+                width: 100%;
+                height: 150px;
+                object-fit: cover;
+                box-shadow: $blue-shadow;
+                border-radius: 5px;
+            }
+
+            & h3 {
+                font-family: 'Play-700';
+                font-size: 20px;
+                padding: 20px 0px;
+            }
+
+            & p {
+                font-family: 'Play-400';
+                font-size: 16px;
+                padding-bottom: 5px;
+
+                @include respond-to(sm) {
+                    font-size: 18px;
                 }
-                
-            
+            }
+
+            &__date {
+                font-size: 14px !important;
+                padding-top: 20px;
+            }
+
+
         }
     }
-    
-    
+
+
 }

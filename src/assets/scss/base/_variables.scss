@@ -5,23 +5,23 @@ $screen-lg: 1200px;
 $screen-xl: 1450px;
 
 
-$blue: rgb(51, 173, 255);
-$dark-blue: rgb(0, 103, 198);
+$blue: rgb(15, 113, 194);
+$dark-blue: rgb(0, 99, 194);
 $dark-dark-blue: rgb(0, 37, 117);
-$light-blue: rgb(153, 214, 255);
+$light-blue: rgb(143, 210, 255);
 $light-light-blue: rgb(204, 235, 255);
 $red: #cf0603;
-$grey: #5a5a5a;
+$grey: rgb(79, 79, 79);
 $light-grey: #bdbbbb;
 $beige: #dddddd;
-$white: #FFFFFF; 
+$white: #FFFFFF;
 $black: #000000;
 
 $blue-shadow: rgba(51, 173, 255, 0.3) 0px 3px 5px;
 $blue-shadow-big: rgba(51, 173, 255, 0.5) 0px 5px 10px;
-$grey-shadow-big: rgba(0, 0, 0, 0.4) 0px 5px 15px;    
+$grey-shadow-big: rgba(0, 0, 0, 0.4) 0px 5px 15px;
 $grey-shadow-big-bright: rgba(0, 0, 0, 0.8) 0px 5px 15px;
-  
+
 
 
 
@@ -35,6 +35,4 @@ $card-border-radius: 0;
 
 
 $nav-link-color: #000 !important;
-$nav-link-hover-color:#000 !important;
-
-
+$nav-link-hover-color: #000 !important;
